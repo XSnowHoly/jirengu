@@ -1,0 +1,156 @@
+body {
+	font-family: "Microsoft YaHei","iconfont"  !important;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+.layout {
+    width: 1200px;
+    margin: 50px auto 100px;
+    background: #FDFDFE;
+    box-shadow: 2px 3px 6px #ccc;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.aside {
+    width: 350px;
+    float: left;
+    margin-left: 50px;
+    background: #F3EFF7;
+    text-align: center;
+}
+
+.aside img {
+	width: 60%;
+	border: 2px solid #fff;
+	border-radius: 60%;
+}
+
+.aside .content {
+	margin-top: 60px;
+}
+
+.aside .content h2 {
+	display: inline-block;
+	width: 100%;
+	padding: 10px 0;
+	background: #A4C2DE;
+	color: #fff;
+	box-shadow: 2px 3px 5px #ccc;
+
+}
+
+.aside .content span {
+	display: inline-block;
+    width: 35%;
+    padding: 10px 10px;
+}
+
+.aside .content .contact span {
+	display: block;
+	text-align: left;
+	margin-left: 15%;
+	width: 80%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.aside .content .hobby {
+	margin-bottom: 40px;
+}
+
+.aside .content .hobby li {
+	display: block;
+	float: left;
+	width: 40%;
+	margin: 15px;
+	font-size: 1.5em;
+}
+
+.main {
+	width: 60%;
+	float: right;
+	margin-right: 30px;
+}
+
+.main h3 {
+	display: inline-block;
+	width: 100%;
+	padding: 15px 0 15px;
+	text-indent: 50px;
+	border-bottom: 2px solid #575757;
+	color: #434343;
+	font-size: 1.3em;
+}
+
+.main span,
+.main h4 {
+    display: inline-block;
+    width: 40%;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    vertical-align: top;
+    color: #9DBADD;
+}
+
+.main span {
+	color: #727171;
+	font-size: 16px;
+	line-height: 1.5;
+	text-align: left;
+	text-align:justify;
+	margin-bottom: 20px;
+}
+
+.main p {
+	margin: 0 20px 30px;
+}
+
+.adorn {
+	height: 90px;
+	position: relative;
+}
+
+.adorn:before {
+	content: '';
+	position: absolute;
+	left: -20px;
+	top: 16px;
+	display: block;
+	width: 60px;
+    height: 56px;
+    background: #A4C2DE;
+    -webkit-transform: skew(30deg);
+    -moz-transform: skew(30deg);
+    -o-transform: skew(30deg);
+    transform: skew(30deg);
+}
+.adorn:after {
+	content: '';
+	position: absolute;
+	right: -20px;
+	top: 16px;
+	display: block;
+	width: 60px;
+    height: 56px;
+    background: #A4C2DE;
+    -webkit-transform: skew(30deg);
+    -moz-transform: skew(30deg);
+    -o-transform: skew(30deg);
+    transform: skew(30deg);
+}

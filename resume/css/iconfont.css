@@ -1,0 +1,79 @@
+
+@font-face {font-family: "iconfontyyy";
+  src: url('iconfont.eot?t=1490441219145'); /* IE9*/
+  src: url('iconfont.eot?t=1490441219145#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/iconfont.woff?t=1490441219145') format('woff'), /* chrome, firefox */
+  url('../font/iconfont.ttf?t=1490441219145') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../font/iconfont.svg?t=1490441219145#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfontyyy {
+  font-family:"iconfontyyy" !important;
+  font-size: 20px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before { content: "\e640"; }
+
+.icon-dianhua:before { content: "\e621"; }
+
+.icon-techangaihao:before { content: "\e604"; }
+
+.icon-jianshen:before { content: "\e606"; }
+
+.icon-weixin-copy:before { content: "\e600"; }
+
+.icon-pingpangqiushi:before { content: "\e72b"; }
+
+.icon-youxiang:before { content: "\e673"; }
+
+.icon-xueli:before { content: "\e60d"; }
+
+.icon-contact:before { content: "\e6a5"; }
+
+.icon-yinle:before { content: "\e633"; }
+
+.icon-xinxi:before { content: "\e65b"; }
+
+.icon-address:before { content: "\e6d9"; }
+
+.icon-gongzuo:before { content: "\e620"; }
+
+.icon-github:before { content: "\e752"; }
+
+.icon-evaluate:before { content: "\e706"; }
+
+.icon-jineng:before { content: "\e72a"; }
+
+.icon-huihua:before { content: "\e601"; }
+
+.icon-contact:before,
+.icon-xinxi:before,
+.icon-techangaihao:before {
+    position: relative; left: -20px; font-size: 30px; 
+}
+
+.icon-phone:before,
+.icon-weixin-copy:before,
+.icon-youxiang:before,
+.icon-address:before {
+  position: relative; left: -5px; font-size: 26px; 
+}
+
+.icon-jianshen:before,
+.icon-pingpangqiushi:before,
+.icon-yinle:before,
+.icon-huihua:before {
+  position: relative; left: -10px; font-size: 30px; 
+}
+
+.icon-xueli:before,
+.icon-gongzuo:before,
+.icon-jineng:before,
+.icon-evaluate:before {
+  position: relative; left: -20px; font-size: 30px; 
+  color: #A4C2DE;
+}
+
