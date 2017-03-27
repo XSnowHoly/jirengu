@@ -15,7 +15,7 @@ li {
     width: 1200px;
     margin: 50px auto 100px;
     background: #FDFDFE;
-    box-shadow: 2px 3px 6px #ccc;
+    box-shadow: 2px 3px 5px #ccc;
 }
 
 .clearfix:after {
