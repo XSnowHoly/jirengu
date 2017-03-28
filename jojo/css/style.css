@@ -1,7 +1,8 @@
 body,
 html,
 ul,
-li {
+li,
+img {
     font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
     margin: 0;
     padding: 0;
@@ -11,13 +12,22 @@ a {
     text-decoration: none;
 }
 
+li {
+    list-style: none;
+}
+
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
 nav {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 75px; 
     background: #000;
     opacity: 0.7;
-    background-position: fixed;
     z-index: 666;
 }
 
@@ -28,11 +38,12 @@ nav > a {
 
 nav img {
     margin-left: 20px;
-    height: 75px;
+    height: 100%;
 }
 
 #nav {
     max-width: 1800px;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -45,7 +56,11 @@ nav img {
 #nav li {
     display: block;
     float: left;
-    padding: 25px 10px;
+    width: 100px;
+    height: 75px;
+    text-align: center;
+    line-height: 75px;
+    transition: all .5s;
 }
 
 #nav li:hover {
@@ -58,6 +73,7 @@ nav img {
     height: 100%;
     font-weight: bold;
     letter-spacing: .2em;
+    text-indent: .2em;
 }
 
 #nav li a:hover {
@@ -65,8 +81,11 @@ nav img {
 
 }
 
-.header-video {
+#header {
     position: relative;
+}
+
+.header-video {
     width: 100%;
     height: 800px;
     min-width: 640px;
@@ -76,7 +95,7 @@ nav img {
 .intro-text {
     text-align: center;
     position: absolute;
-    top: 40%;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     color: #fff;
@@ -98,3 +117,217 @@ nav img {
     background: #2087D7;
 }
 
+#content {
+    margin-top: 100px;
+}
+
+#content .description {
+
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.description > img {
+    
+    width: 100%;
+}
+
+.c-title {
+    font-size: 3em;
+    letter-spacing: 0.2em;
+    margin-bottom: 50px;
+}
+
+#content .description > p {
+    text-indent: 0.2em;
+    line-height: 1.5;
+}
+
+.writing-content {
+    width: 100%;
+    text-align: center;
+    background: #D8F2FF;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+.writing-content .wc-box{
+    max-width: 1400px;
+    margin: 100px auto 100px;
+}
+
+.show {
+    margin-left: -30px;
+}
+
+.writing-content .wc-box li {
+    display: block;
+    float: left;
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 327px;
+    box-shadow: 2px 3px 4px #000;
+}
+
+.writing-content .wc-box li img {
+    width: 100%;
+}
+
+.wc-box li p {
+    text-indent: 2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.role {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.role li {
+    position: relative;
+    width: 1600px;
+    height: 500px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+.role li:before {
+    position: absolute;
+    left: 50%;
+    margin-left: -4px;
+    content: '';
+    display: block;
+    width: 4px;
+    height: 100%;
+    background: #000;
+    z-index: -1;
+}
+
+.role img {
+    width: 500px;
+    cursor: pointer;  
+    border: 6px solid #000;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.role img:hover {
+    -moz-transform:scale(1.2); 
+    -webkit-transform:scale(1.2); 
+    -o-transform:scale(1.2); 
+    border-color: #2B60D0;
+}
+
+.role .role-des {
+    position: absolute;
+    width: 500px;
+    top: 20%;
+    left: 0;
+}
+
+.role li:nth-of-type(even) .role-des{
+    left: auto;
+    right: 0;
+    /*left: 70%;*/
+}
+
+.role li:last-child {
+    padding: 0px;
+}
+
+
+
+.role .role-des p {
+    width: 30em;
+}
+
+.writer {
+    background: #E1F2D9;
+    overflow: hidden;
+}
+
+.writer .writer-des {
+    width: 1400px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.writer .writer-des img {
+    display: block;
+    float: left;
+    border: 5px solid #2087D7;
+    border-radius: 20%;
+}
+
+.writer .writer-des .des-text {
+    width: 650px;
+    float: left;
+    margin-left: 50px;
+}
+
+.writer .writer-des h2,
+.writer .writer-des p {
+    text-align: left;
+    line-height: 2em;
+    text-indent: 2em;
+}
+
+#footer {
+    background: url(../images/footer-bg.jpg) no-repeat ;
+    background-size: cover;
+    overflow: hidden;
+    text-align: center;
+}
+
+#footer .connect-us {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#footer .connect-us form {
+    margin-bottom: 100px;
+    opacity: .9;
+}
+
+#footer .input-aside {
+    float: left;
+}
+
+input[type="text"] {
+    width: 400px;
+    height: 40px;
+    display: block;
+    padding-left: 20px;
+    border: 0;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+}
+
+.input-row {
+    margin-bottom: 30px;
+}
+
+input[type="submit"] {
+    padding: 20px 30px;
+    cursor: pointer;
+    border: 0;
+    font-size: 26px;
+    letter-spacing: .5em;
+    text-indent: .5em;
+    color: #fff;
+    background: #4A77E1;
+}
+
+textarea {
+    display: block;
+    float: left;
+    width: 40%;
+    height: 175px;
+    margin-left: 50px;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+}
