@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="content">
+    <ul id="newsList">     
+    </ul>
+    <button id="load-more" class="btn">加载更多</button>
+  </div>
+
+  <script>
+     var btn = document.querySelector("#load-more");
+
+
+     btn.addEventListener('click', function(){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState == 4 && (xhr.status === 200 || xhr.status === 304)){
+            var results = JSON.parse(xhr.responseText);
+            console.log(results);
+          }
+        }
+        xhr.open('get', '/loadMore?index=0&length=5', true);
+        xhr.send();
+
+
+        // var html = getHtml(data);
+        // render(html);
+     })
+  </script>
+</body>
+</html>

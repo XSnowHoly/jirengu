@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="name" content="content" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="content">
+    <ul id="newsList">     
+    </ul>
+    <button id="load-more" class="btn">加载更多</button>
+  </div>
+
+  <script>
+     var  newsList = document.querySelector("#newsList");
+     var btn = document.querySelector("#load-more");
+     var pageIndex = 0;
+     var lock = false;
+     btn.addEventListener('click', function(){
+        if(lock) return;
+        lock = true;
+        loadData(function(news){
+          renderPage(news);
+          lock = false;
+          pageIndex += 5;
+          
+        })
+        // var xhr = new XMLHttpRequest();
+        // xhr.onreadystatechange = function(){
+        //   if(xhr.readyState == 4){
+        //     if (xhr.status === 200 || xhr.status === 304) {
+        //       var results = JSON.parse(xhr.responseText);
+        //       console.log(results);
+        //       var fragment = document.createDocumentFragment();
+        //       for(var i=0; i<results.length; i++){
+        //         node = document.createElement('li');
+        //         node.innerText = results[i];
+        //         fragment.appendChild(node);
+        //       }
+
+        //       newsList.appendChild(fragment);
+
+        //       pageIndex += 5;
+        //     }else {
+        //       console.log('出错了');
+        //     }
+
+        //   }
+        // }
+        // xhr.open('get', '/loadMore?index=' + pageIndex + '&length=5', true);
+        // xhr.send();
+        // lock = false;
+
+        // var html = getHtml(data);
+        // render(html);
+        function loadData(callback){
+          ajax({
+            type: 'get',
+            url: '/loadMore',
+            data: {
+              index: pageIndex,
+              length: 5
+            },
+            onSuccess: callback,
+            onError: function(){
+              console.log('出错了');
+            }
+          });
+        }
+
+        function renderPage(news){
+          var fragment = document.createDocumentFragment();
+          for(var i=0; i<news.length; i++){
+                node = document.createElement('li');
+                node.innerText = news[i];
+                fragment.appendChild(node);
+              }
+
+              newsList.appendChild(fragment);
+        }
+
+        // function ajax(options){
+        //   var xhr = new XMLHttpRequest();
+        //   xhr.onreadystatechange = function(){
+        //   if(xhr.readyState == 4){
+        //     if (xhr.status === 200 || xhr.status === 304) {
+        //       var results = JSON.parse(xhr.responseText);
+        //       options.onSuccess(results);
+        //     }else {
+        //       options.onError();
+        //     }
+
+        //   }
+        // }
+        // var query = '?';
+        // for(key in options.data){
+        //     query += key + '=' + options.data[key] + '&';
+        // }
+        //  query = query.substr(0, query.length - 1);
+        // xhr.open(options.type, options.url + query, true);
+        // xhr.send();
+        // }
+
+        function ajax(opts){
+            opts.onSuccess = opts.onSuccess || function(){};
+            opts.onError = opts.onError || function(){};
+            opts.type = opts.type || 'get';
+            opts.dataType = opts.dataType || 'json';
+            opts.data = opts.data || {};
+            var dataStr ='';
+            for (var key in opts.data) {
+                dataStr += key + '=' + opts.data[key] + '&';
+            }
+            var dataStr = dataStr.substr(0, dataStr.length - 1);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                 if(xmlhttp.readyState === 4){
+                    if(xmlhttp.status === 200 || xmlhttp.status === 304){
+                        if(opts.dataType === 'text') {
+                            opts.onSuccess(xmlhttp.responseText);
+                        } 
+                        if(opts.dataType === 'json') {
+                            var json = JSON.parse(xmlhttp.responseText);
+                            opts.onSuccess(json);
+                        }
+                    } else {
+                        opts.onError();
+                    }
+                }
+            };
+
+            if (opts.type.toLowerCase() === 'post') {
+                xmlhttp.open(opts.type, opts.url, true);
+                xmlhttp.setRequestHeader("Content-type", "application/x-www-from-urlencoded");
+                xmlhttp.send(dataStr);
+            }
+            if (opts.type.toLowerCase() === 'get') {
+                xmlhttp.open(opts.type, opts.url + "?" + dataStr, true);
+                xmlhttp.send();
+            }
+        }
+     })
+  </script>
+</body>
+</html>
