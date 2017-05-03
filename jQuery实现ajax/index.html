@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="name" content="content" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>jQuery加载更多</title>
+</head>
+<body>
+  <div id="content">
+    <ul id="newsList">     
+    </ul>
+    <button id="load-more" class="btn">加载更多</button>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+  <script>
+     var $newsList = $('#newsList');
+     var $btn = $('#load-more');
+     var $pageIndex = 0;
+     var lock = true;
+     $btn.on('click', function() {
+         if(!lock) {
+         return;
+         }
+         lock = false;
+         $.get('/loadMore', {
+         pageIndex: $pageIndex
+         }).done(function(ret) {
+         $pageIndex+=5;
+         appendHtml(ret);
+         lock = true;
+         }).fail(function() {
+            alert('系统异常');
+      });
+     });
+    
+
+     function appendHtml(news) {
+        var html = '';
+        $.each(news, function(index, val) {
+            html += '<li>' + news[index] + '</li>' ;
+        });
+        $newsList.append(html);
+     }
+  </script> 
+</body>
+</html>
