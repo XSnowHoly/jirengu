@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8" />
+    <title>图片懒加载</title>
+    <style>
+        body,html {
+            padding: 0;
+            margin: 0;
+        }
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: block;
+        }
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .img-box {
+            width: 800px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+        .img-list > li {
+            float: left;
+            margin-left: 60px;
+        }
+
+        .img-list > li >img {
+            width: 300px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="img-box clearfix">
+        <ul class="img-list clearfix">
+            <li><img src="images/20.jpg" alt="" data-img="images/1.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/2.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/3.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/4.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/5.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/6.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/7.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/8.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/9.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/10.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/11.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/12.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/13.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/14.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/15.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/16.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/17.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/18.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/19.jpg"/></li>
+            <li><img src="images/20.jpg" alt="" data-img="images/20.jpg"/></li>
+        </ul>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+<script>
+    $imgList = $('.img-list li img');
+    check();
+    $(window).on('scroll', check);
+
+    function check (){
+        $imgList.not('show').each(function() {
+            if(isShow($(this))){
+                showImg($(this));
+            }
+        });   
+    }
+
+
+    function isShow($node) {
+        var windowHeight = $(window).height(),
+            scrollTop = $(window).scrollTop(),
+            offsetTop = $node.offset().top;
+            nodeHeight = $node.outerHeight(true);
+        if( windowHeight + scrollTop > offsetTop && scrollTop < offsetTop + nodeHeight) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function showImg($imgs) {
+        $imgs.each(function (){
+            var imgUrl = $(this).attr('data-img');
+            $(this).attr('src', imgUrl);
+            $(this).addClass('show');
+        })
+    }
+
+</script>
+</html>
