@@ -114,7 +114,8 @@
     <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
     <script>
         ///////自定义变量/////////
-        var $slidesUl = $('.slides-img'),               
+        var $carouselBox = $('.carousel'),
+            $slidesUl = $('.slides-img'),               
             $slidesLi = $('.slides-img > li'),
             $prev = $('.btn.prev'),
             $next = $('.btn.next'),
@@ -122,6 +123,9 @@
             $slidesNum = $slidesLi.length;
             $index = 0;
             $lock = true;
+
+        $carouselBox.on('mouseenter', stopTime);    // 鼠标移动到图片上轮播停止
+        $carouselBox.on('mouseleave', auto);        // 鼠标移开后开始轮播    
 
         $next.on('click', function(e) {
             e.preventDefault();
@@ -157,10 +161,15 @@
             setShullingBtn();
         }
 
-        function auto($time=3500) {
-            check = setTimeout(auto,$time);
-            setTimeout(next);
+        // 自动轮播
+        function auto() {
+            check = setInterval(next, 3500);
+            
         }
+        // 停止自动轮播
+        function stopTime() {
+            clearInterval(check);
+        }w
 
         function setShullingBtn() {
             $shullingBtn.removeClass('active')

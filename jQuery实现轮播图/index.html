@@ -20,11 +20,11 @@
             margin: 0;
             list-style: none;
         }
-        /*.clearfix:after {
+        .clearfix:after {
             content: '';
             display: block;
             clear: both;
-        }*/
+        }
 
         .carousel {
             position: relative;
@@ -88,7 +88,7 @@
     </style>
 </head>
 <body>
-    <div class="carousel">
+    <div class="carousel clearfix">
         <ul class="slides-img">
             <li data-index="0"><a href="#"><img src="images/1.jpg" alt=""></a></li>
             <li data-index="1"><a href="#"><img src="images/2.jpg" alt=""></a></li>
@@ -107,7 +107,8 @@
     <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
     <script>
         ///////自定义变量/////////
-        var $slidesUl = $('.slides-img'),               
+        var $carouselBox = $('.carousel'),
+            $slidesUl = $('.slides-img'),               
             $slidesLi = $('.slides-img > li'),
             $prev = $('.btn.prev'),
             $next = $('.btn.next'),
@@ -126,21 +127,17 @@
                         left: -$slidesWidth
                      });
         ///////绑定事件/////////
-        $slidesUl.on('mouseenter', stopTime);    // 鼠标移动到图片上轮播停止
-        $slidesUl.on('mouseleave', auto);        // 鼠标移开后开始轮播
+        $carouselBox.on('mouseenter', stopTime);    // 鼠标移动到图片上轮播停止
+        $carouselBox.on('mouseleave', auto);        // 鼠标移开后开始轮播
 
         $prev.on('click', function(e) {
             e.preventDefault();
             prev();
-            stopTime();
-            auto();
         });
 
         $next.on('click', function(e) {
             e.preventDefault();
             next();
-            stopTime();
-            auto();
         });
 
         $shullingBtn.on('click', function (){
@@ -195,14 +192,13 @@
         }
         
         // 自动轮播
-        function auto($time=3500) {
-            check = setTimeout(auto,$time);
-            setTimeout(next);
+        function auto() {
+            check = setInterval(next, 3500);
             
         }
         // 停止自动轮播
         function stopTime() {
-            clearTimeout(check);
+            clearInterval(check);
         }
         auto();
     </script>
