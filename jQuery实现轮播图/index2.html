@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title>jQuery实现轮播图</title>
+    <title>jQuery实现轮播图-渐变轮播</title>
     <!-- 优先使用 IE 最新版本和 Chrome -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     
@@ -57,8 +57,15 @@
         }
 
         .slides-img > li {
-            float: left;
+            position: absolute;
+            display: none;
+            /*float: left;*/
         }
+
+        /*.slides-img .show {
+            display: block;
+        }*/
+
 
         .slides-img img {
             width: 1000px;
@@ -90,7 +97,7 @@
 <body>
     <div class="carousel">
         <ul class="slides-img">
-            <li data-index="0"><a href="#"><img src="images/1.jpg" alt=""></a></li>
+            <li data-index="0" class="show"><a href="#"><img src="images/1.jpg" alt=""></a></li>
             <li data-index="1"><a href="#"><img src="images/2.jpg" alt=""></a></li>
             <li data-index="2"><a href="#"><img src="images/3.jpg" alt=""></a></li>
             <li data-index="3"><a href="#"><img src="images/4.jpg" alt=""></a></li>
@@ -112,99 +119,54 @@
             $prev = $('.btn.prev'),
             $next = $('.btn.next'),
             $shullingBtn = $('.shulling-btn > li');
-
-        var $firstLi = $slidesLi.first(),
-            $lastLi = $slidesLi.last(),
             $slidesNum = $slidesLi.length;
-            $slidesWidth = $firstLi.width();
             $index = 0;
-
-        $slidesUl.append($firstLi.clone());      // 添加克隆元素
-        $slidesUl.prepend($lastLi.clone());      // 添加克隆元素
-        $slidesUl.css({                        
-                        width: $slidesUl.children().length * $slidesWidth + 'px',
-                        left: -$slidesWidth
-                     });
-        ///////绑定事件/////////
-        $slidesUl.on('mouseenter', stopTime);    // 鼠标移动到图片上轮播停止
-        $slidesUl.on('mouseleave', auto);        // 鼠标移开后开始轮播
-
-        $prev.on('click', function(e) {
-            e.preventDefault();
-            prev();
-            stopTime();
-            auto();
-        });
+            $lock = true;
 
         $next.on('click', function(e) {
             e.preventDefault();
             next();
-            stopTime();
-            auto();
+        })
+        $prev.on('click', function(e) {
+            e.preventDefault();
+            prev();
+        })
+
+        $shullingBtn.on('click', function() {
+            play($(this).index());
         });
+        auto();
+        play();
 
-        $shullingBtn.on('click', function (){
-            $BtnIndex = $(this).index();
-            if($index === $BtnIndex) return;
-            console.log($BtnIndex),
-            console.log($index);
-            ($index > $BtnIndex) ? prev($index-$BtnIndex) : next($BtnIndex-$index);
-        });
-
-
-
-        var lock = true;           //  状态锁防止连续点击重复执行函数
-
-        ///////处理函数/////////
-        function prev(n=1) {
-            if(!lock) return;
-            lock = false;
-            $slidesUl.animate({ 'left': '+='+ $slidesWidth*n +'px' }, function() {
-                $index -= n;
-                if($index < 0) {
-                $('.slides-img').css({ 'left': -($slidesWidth*$slidesNum) });
-                $index = $slidesNum -1;
-                
-            }
-            lock = true;
-            gotoBtn();
-            });
-            
+        function next() {
+            play(($index+1) % $slidesNum);
         }
 
-        function next(n=1) {
-            if(!lock) return;
-            lock = false;
-            $slidesUl.animate({ 'left': '-='+ $slidesWidth*n +'px' }, function() {
-                $index += n;
-                if($index === $slidesNum) {
-                $('.slides-img').css({ 'left': -$slidesWidth });
-                $index = 0;
-                
-            }
-            lock = true;
-            gotoBtn();
-            });
-            
+        function prev() {
+            play(($slidesNum+$index-1) % $slidesNum);
         }
 
-        function gotoBtn() {
-            $shullingBtn.removeClass('active')
-            .eq($index)
-            .addClass('active');
+        function play($idx=0) {
+            if(!$lock) return;
+            $lock = false;
+            $slidesLi.eq($index).fadeOut(500);
+            $slidesLi.eq($idx).fadeIn(500, function() {
+                $lock = true;
+            })
+            $index = $idx;
+            setShullingBtn();
         }
-        
-        // 自动轮播
+
         function auto($time=3500) {
             check = setTimeout(auto,$time);
             setTimeout(next);
-            
         }
-        // 停止自动轮播
-        function stopTime() {
-            clearTimeout(check);
+
+        function setShullingBtn() {
+            $shullingBtn.removeClass('active')
+                        .eq($index)
+                        .addClass('active');
         }
-        auto();
     </script>
 </body>
 </html>
