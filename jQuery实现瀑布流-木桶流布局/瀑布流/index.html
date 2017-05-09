@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery实现瀑布流</title>
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <!-- 开启响应式 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <style>
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .waterfull {
+            position: relative;
+        }
+
+        .imgUl > li {
+            position: absolute;
+            border: 1px solid #ccc;
+            margin: 10px;
+            transition: all .6s;
+            box-shadow: 1px 2px 6px #333;
+        }
+
+        .imgUl > li:hover {
+            transform: scale(1.2,1.2);
+            z-index:999;
+        }
+
+        .imgUl img {
+            vertical-align: middle;
+            border: none;
+            width: 320px;
+        }
+        @media screen and (max-width: 800px) {
+        .imgUl img {
+                width: 200px;
+            }
+        }
+        @media screen and (max-width: 500px) {
+        .imgUl img {
+                width: 145px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="waterfull">
+        <ul class="imgUl">
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201501/04/20150104034133_kGHPr.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201501/04/20150104034133_kGHPr.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201502/20/20150220203019_KdxhK.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201502/20/20150220203019_KdxhK.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201508/29/20150829130859_HMQVy.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201508/29/20150829130859_HMQVy.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201303/22/20130322214143_sPUsZ.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201303/22/20130322214143_sPUsZ.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/blog/201403/19/20140319111448_522iX.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/blog/201403/19/20140319111448_522iX.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201702/25/20170225211743_FsTj8.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201702/25/20170225211743_FsTj8.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201702/25/20170225210922_325Lu.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201702/25/20170225210922_325Lu.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201602/21/20160221230416_dMUwy.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201602/21/20160221230416_dMUwy.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201608/15/20160815170202_iVhKm.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201608/15/20160815170202_iVhKm.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201512/20/20151220131355_4ktZn.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201512/20/20151220131355_4ktZn.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201605/14/20160514110635_MzKPJ.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201605/14/20160514110635_MzKPJ.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201611/04/20161104233146_8jvkz.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201611/04/20161104233146_8jvkz.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201501/02/20150102190405_aRzmP.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201501/02/20150102190405_aRzmP.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201608/14/20160814220033_sV5E4.thumb.700_0.png"  target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201608/14/20160814220033_sV5E4.thumb.700_0.png" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201612/04/20161204003906_XvEZV.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201612/04/20161204003906_XvEZV.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201505/01/20150501224059_GMsuc.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201505/01/20150501224059_GMsuc.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201207/10/20120710192155_XkiGA.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201207/10/20120710192155_XkiGA.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201612/04/20161204233353_hs3MS.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201612/04/20161204233353_hs3MS.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201608/01/20160801050025_tcCB5.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201608/01/20160801050025_tcCB5.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201611/12/20161112201645_CtTLW.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201611/12/20161112201645_CtTLW.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201608/01/20160801045937_N8zdY.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201608/01/20160801045937_N8zdY.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201703/20/20170320034707_VGSPB.thumb.700_0.png"  target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201703/20/20170320034707_VGSPB.thumb.700_0.png" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201703/26/20170326143100_5eGnN.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201703/26/20170326143100_5eGnN.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201510/25/20151025021630_daVuf.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201510/25/20151025021630_daVuf.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201607/09/20160709194603_cZm8K.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201607/09/20160709194603_cZm8K.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201702/27/20170227011025_KM5Ca.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201702/27/20170227011025_KM5Ca.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/blog/201308/31/20130831225339_zav34.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/blog/201308/31/20130831225339_zav34.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://a-ssl.duitang.com/uploads/item/201503/24/20150324222021_EfV5Z.thumb.700_0.jpeg" target="_blank"><img src="https://a-ssl.duitang.com/uploads/item/201503/24/20150324222021_EfV5Z.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201601/09/20160109223027_cxdWK.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201601/09/20160109223027_cxdWK.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201701/31/20170131135613_Chxd8.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201701/31/20170131135613_Chxd8.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201507/10/20150710224643_LPASG.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201507/10/20150710224643_LPASG.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201704/02/20170402133125_B2EuR.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201704/02/20170402133125_B2EuR.thumb.700_0.jpeg" alt=""></a></li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+        
+
+        
+        var WaterFall = (function(){
+            function init(){
+
+                for(var i=0; i< $('.imgUl img').length; i++) {
+                    var img = new Image();
+                    img.src = $('.imgUl img')[i].src;
+                    img.onload = function (){
+                        waterfull();
+                    }
+                    
+
+
+                }
+
+                
+
+               $(window).resize(waterfull);
+            }
+
+            function waterfull() {          
+                var imgUlLength = parseInt($('.waterfull').width() / $('.imgUl img').first().outerWidth(true)),
+                    imgArr = [],                                    // 初始化数组
+                    $imgLi = $('.imgUl li');
+
+                for(var i=0; i<imgUlLength; i++) {
+                    imgArr[i] = 0;
+                }
+
+                $imgLi.each(function() {                            // 循环元素摆放位置
+                    var minValue = Math.min.apply(null, imgArr),
+                        minIndex = imgArr.indexOf(minValue);
+
+                    $(this).css({
+                        top: minValue,
+                        left: $(this).outerWidth(true) * minIndex
+                    })   
+
+                    imgArr[minIndex] += $(this).outerHeight(true);  
+
+                    });
+            }
+
+                return {
+                    init: init
+                }
+        })()
+
+        WaterFall.init();
+
+
+    </script>
+</body>
+</html>
