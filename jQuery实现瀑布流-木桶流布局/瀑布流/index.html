@@ -91,11 +91,13 @@
 
                 for(var i=0; i< $('.imgUl img').length; i++) {
                     var img = new Image();
-                    img.src = $('.imgUl img').attr('src');
-                    img.onload = function(){
+                    img.src = $('.imgUl img')[i].src;
+                    img.onload = function (){
                         waterfull();
                     }
-        
+                    
+
+
                 }
 
                 
