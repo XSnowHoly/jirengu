@@ -104,12 +104,7 @@
                     img.onload = function (){
                         waterfull();
                     }
-                    
-
-
                 }
-
-                
 
                $(window).resize(waterfull);
             }
@@ -127,12 +122,16 @@
                     var minValue = Math.min.apply(null, imgArr),
                         minIndex = imgArr.indexOf(minValue);
 
-                    $(this).css({
-                        top: minValue,
-                        left: $(this).outerWidth(true) * minIndex
-                    })   
+                    var $this = $(this);
 
-                    imgArr[minIndex] += $(this).outerHeight(true);  
+
+                    $this.css({
+                        top: minValue,
+                        left: $this.outerWidth(true) * minIndex
+                         })
+
+                    imgArr[minIndex] += $(this).outerHeight(true);
+                      
 
                     });
             }
