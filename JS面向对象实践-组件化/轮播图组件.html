@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery实现轮播图</title>
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <!-- 开启响应式 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .carousel {
+            position: relative;
+            width: 1000px;
+            height: 575px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .carousel a {
+            display: block;
+        }
+        .carousel .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .carousel .btn.prev {
+
+        }
+        .carousel .btn.next {
+            right: 0;
+        }
+
+
+        .slides-img {
+            position: absolute;
+            display: block;
+            width: 4000px;
+            height: 575px;
+        }
+
+        .slides-img > li {
+            float: left;
+        }
+
+        .slides-img img {
+            width: 1000px;
+            height: 575px;
+        }
+
+        .shulling-btn {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .shulling-btn > li {
+            float: left;
+            margin: 20px 20px;
+            width: 50px;
+            height: 10px;
+            background: #fff;
+            border: 2px solid #fff;
+            cursor: pointer;
+            border-radius: 6px;
+            box-shadow: 2px 2px 3px #333;
+        }
+        .shulling-btn .active {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel clearfix">
+        <ul class="slides-img">
+            <li data-index="0"><a href="#"><img src="images/1.jpg" alt=""></a></li>
+            <li data-index="1"><a href="#"><img src="images/2.jpg" alt=""></a></li>
+            <li data-index="2"><a href="#"><img src="images/3.jpg" alt=""></a></li>
+            <li data-index="3"><a href="#"><img src="images/4.jpg" alt=""></a></li>
+        </ul>
+        <a href="#" class="btn prev"><img src="images/prev.png" alt=""></a>
+        <a href="#" class="btn next"><img src="images/next.png" alt=""></a>
+        <ul class="shulling-btn">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="carousel clearfix">
+        <ul class="slides-img">
+            <li data-index="0"><a href="#"><img src="images/1.jpg" alt=""></a></li>
+            <li data-index="1"><a href="#"><img src="images/2.jpg" alt=""></a></li>
+            <li data-index="2"><a href="#"><img src="images/3.jpg" alt=""></a></li>
+            <li data-index="3"><a href="#"><img src="images/4.jpg" alt=""></a></li>
+        </ul>
+        <a href="#" class="btn prev"><img src="images/prev.png" alt=""></a>
+        <a href="#" class="btn next"><img src="images/next.png" alt=""></a>
+        <ul class="shulling-btn">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+    <script>
+        var Carousel = (function(){
+            function _Carousel($ct) {
+                this.$ct = $ct;
+                this.init();
+                this.bindEvent();
+                this.auto();
+            }
+
+            _Carousel.prototype.init = function() {
+                var $carouselBox = this.$carouselBox = this.$ct,
+                    $slidesUl = this.$slidesUl = this.$ct.find('.slides-img'),               
+                    $slidesLi = this.$slidesLi = this.$ct.find('.slides-img > li'),
+                    $prev = this.$prev = this.$ct.find('.btn.prev'),
+                    $next = this.$next = this.$ct.find('.btn.next'),
+                    $shullingBtn = this.$shullingBtn = this.$ct.find('.shulling-btn > li');
+
+                var $firstLi = $slidesLi.first(),
+                    $lastLi = $slidesLi.last(),
+                    $slidesNum = this.$slidesNum = $slidesLi.length,
+                    $slidesWidth = this.$slidesWidth = $firstLi.width();
+                    this.$index = 0;
+
+                    $slidesUl.append($firstLi.clone());      // 添加克隆元素
+                    $slidesUl.prepend($lastLi.clone());      // 添加克隆元素
+                    $slidesUl.css({                        
+                                    width: $slidesUl.children().length * $slidesWidth + 'px',
+                                    left: -$slidesWidth
+                                 });
+                this.lock = true;                               
+            }
+
+            _Carousel.prototype.bindEvent = function() {
+                    var that = this;
+                    this.$carouselBox.on('mouseenter', function() {
+                        clearInterval(that.check);
+                    });    // 鼠标移动到图片上轮播停止
+                    this.$carouselBox.on('mouseleave', function() {
+                        that.auto();
+                    });        // 鼠标移开后开始轮播
+                    
+
+                    this.$prev.on('click', function(e) {
+                        e.preventDefault();
+                        that.prev();
+                    });
+
+                    this.$next.on('click', function(e) {
+                        e.preventDefault();
+                        that.next();
+                    });
+
+                    this.$shullingBtn.on('click', function (){
+                        this.$BtnIndex = $(this).index();
+                        if(that.$index === this.$BtnIndex) return;
+                        // console.log($BtnIndex),
+                        // console.log(that.$index);
+                        (that.$index > this.$BtnIndex) ? that.prev(that.$index-this.$BtnIndex) : that.next(this.$BtnIndex-that.$index);
+                    });
+            }
+
+            _Carousel.prototype.prev = function(n=1) {
+                var that = this;
+                if(!this.lock) return;
+                this.lock = false;
+                this.$slidesUl.animate({ 'left': '+='+ this.$slidesWidth*n +'px' }, function() {
+                    that.$index -= n;
+                    if(that.$index < 0) {
+                    that.$ct.find('.slides-img').css({ 'left': -(that.$slidesWidth*that.$slidesNum) });
+                    that.$index = that.$slidesNum -1;
+                    
+                }
+                that.lock = true;
+                that.gotoBtn();
+                });
+            }
+
+            _Carousel.prototype.next = function(n=1) {
+                var that = this;
+                if(!this.lock) return;
+                this.lock = false;
+                this.$slidesUl.animate({ 'left': '-='+ this.$slidesWidth*n +'px' }, function() {
+                    that.$index += n;
+                    if(that.$index === that.$slidesNum) {
+                    that.$ct.find('.slides-img').css({ 'left': -that.$slidesWidth });
+                    that.$index = 0;
+                    
+                }
+                that.lock = true;
+                that.gotoBtn();
+                });                 
+            }
+
+            _Carousel.prototype.gotoBtn = function() {
+                this.$shullingBtn.removeClass('active')
+                .eq(this.$index)
+                .addClass('active');
+            }
+
+            _Carousel.prototype.auto = function() {
+                var that = this;
+                this.check = setInterval(function() {
+                    that.next();
+                }, 3000);
+            }
+
+            _Carousel.prototype.stopPlay = function() {
+                var that = this;
+                
+            }
+            
+            return {
+                init: function($ct) {
+                    $ct.each(function(index, node) {
+                        new _Carousel($(node));
+                    })
+                }
+            }
+
+        })();
+
+        Carousel.init($('.carousel'));
+    </script>
+</body>
+</html>
