@@ -40,6 +40,30 @@ span {
     margin: 0 auto;
 }
 
+.plate-logo {
+    display: inline-block;
+    width: 38px;
+    height: 32px;
+    background-image: url(../images/icons.png);
+    background-repeat: no-repeat;
+}
+
+.plate-title {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+.plate-title a {
+    color: #000;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.plate-title a:hover {
+    color: #00A1D6;
+}
+
 /*头部区域*/
 .header {
     height: 170px;
@@ -624,4 +648,174 @@ span {
 
 
 /*顶部视频区域结束*/
+
+
+/*推广区域开始*/
+
+.promotion-box {
+    height: 194px;
+    margin-top: 40px;
+}
+
+.pb-l {
+    width: 880px;
+    height: 194px;
+    float: left;
+    margin-right: 20px;
+}
+
+.pb-l-header {
+    width: inherit;
+    height: 34px;
+}
+
+.pb-l-header > a {
+    display: inline-block;
+    vertical-align: super;
+    padding: 0 10px;
+    color: #6D757A;
+}
+
+.pb-l-header > a:hover {
+    color: #00A1D6;
+}
+
+.pb-logo {
+    background-position: -141px -79px;
+}
+
+.pb-l-mv {
+    display: block;
+    margin-top: 10px;
+    margin-left: -20px;
+}
+
+.pb-l-mv > li {
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 20px;
+    width: 160px;
+    height: 150px;
+}
+
+.pb-l-mv .img-box {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 12px;
+}
+
+.pb-l-mv .img-box > a {
+    display: block;
+    width: 100%;
+} 
+
+.pb-l-mv .img-box > a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100px;
+    border-radius: 6px;
+    background: rgba(0,0,0,.3);
+    opacity: 0;
+    transition: all .3s;
+}
+
+.pb-l-mv .img-box > a:hover:before {
+    opacity: 1;
+}
+
+.pb-l-mv > li img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.pb-l-mv .pb-t {
+    /*margin-top: 12px;*/
+    /*    
+    width: 100%;
+    height: 38px;
+    */
+    text-align: left;
+    overflow: hidden;
+    line-height: 20px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.pb-l-mv .pb-t a {
+    color: #000;
+    transition: all .3s;
+}
+.pb-l-mv .pb-t a:hover {
+    color: #00A1D6;
+}
+
+
+.pb-r {
+    width: 260px;
+    float: left;
+}
+
+.real-time {
+    width: inherit;
+    height: 34px;
+    background: #E5E9EF;
+    border-radius: 6px;
+}
+
+.real-time .online-number {
+    display: block;
+    float: left;
+    width: 118px;
+    height: 34px;
+    padding-left: 18px;
+}
+
+.real-time .new-conribute {
+    display: block;
+    float: left;
+    width: 110px;
+    height: 34px;
+    padding-left: 14px;
+}
+
+.real-time .new-conribute:before {
+    color: #6D757A;
+    position: relative;
+    top: 0;
+    left: -15px;
+    content: '|';
+    display: inline-block;
+}
+
+.real-time a {
+    color: #6D757A;
+}
+
+.real-time a:hover {
+    color: #00A1D6;
+}
+
+.real-time p {
+    display: inline-block;
+    line-height: 34px;
+}
+
+.pb-r-img {
+    width: inherit;
+    height: 150px;
+    margin-top: 10px;
+
+}
+
+.pb-r-img img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+
+/*推广区域结束*/
 
