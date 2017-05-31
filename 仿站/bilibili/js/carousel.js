@@ -13,8 +13,6 @@ var Carousel = (function(){
                     $slidesLi = this.$slidesLi = this.$ct.find('.c-img > li'),
                     $slidesImg = this.$slidesImg = this.$ct.find('.c-img img'),
                     $bannerTitle = this.$bannerTitle = this.$ct.find('.banner-title > a'),
-                    // $prev = this.$prev = this.$ct.find('.btn.prev'),
-                    // $next = this.$next = this.$ct.find('.btn.next'),
                     $shullingBtn = this.$shullingBtn = this.$ct.find('.banner-btn > li');
 
                 var $firstLi = $slidesLi.first(),
@@ -29,6 +27,7 @@ var Carousel = (function(){
                                     width: $slidesUl.children().length * $slidesWidth + 'px',
                                     left: -$slidesWidth
                                  });
+                    console.log($slidesUl.children().length * $slidesWidth);
                 this.lock = true;                               
             };
 
