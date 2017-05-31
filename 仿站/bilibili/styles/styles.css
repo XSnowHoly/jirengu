@@ -468,10 +468,12 @@ span {
 
 .carousel > .c-img > li {
     display: block;
+    width: 440px;
+    height: 220px;
     float: left;
 }
 
-.carousel > .c-img > li a {
+.carousel > .c-img > li > a {
     display: block; 
     width: 100%;
 }

@@ -27,7 +27,6 @@ var Carousel = (function(){
                                     width: $slidesUl.children().length * $slidesWidth + 'px',
                                     left: -$slidesWidth
                                  });
-                    console.log($slidesUl.children().length * $slidesWidth);
                 this.lock = true;                               
             };
 
