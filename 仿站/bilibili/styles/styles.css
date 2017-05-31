@@ -471,6 +471,11 @@ span {
     float: left;
 }
 
+.carousel > .c-img > li a {
+    display: block; 
+    width: 100%;
+}
+
 .banner-info {
     width: 100%;
     height: 34px;
@@ -588,8 +593,14 @@ span {
 .hot-mv .info.active {
     height: 100%;
     background: rgba(0,0,0,.8);
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#cc000000,endcolorstr=#cc000000);
+    *zoom: 1;
 }
 
+/*:root .hot-mv .info.active {
+    filter: none;
+};
+*/
 
 .hot-mv .info .title {
     margin: 15px auto;
@@ -622,7 +633,9 @@ span {
     color: #fff;
     text-align: center;
     padding: 13px 5px 13px 10px;
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,.6); 
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#cc000000,endcolorstr=#cc000000);
+    *zoom: 1;
     background-image: url(../images/icons2.png);
     background-position: 6px -1208px;
     cursor: pointer;
@@ -633,6 +646,10 @@ span {
     -moz-user-select: none;
     display: none;
 }
+
+:root .hot-mv .no-select {
+    filter: none;
+};
 
 .hot-mv .no-select:hover {
     background-color: rgba(0,0,0,.8);
