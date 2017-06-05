@@ -448,7 +448,7 @@ span {
 }
 
 /*轮播图区域*/
-.carousel {
+.carousel-banner {
     position: relative;
     float: left;
     margin-right: 20px;
@@ -459,21 +459,21 @@ span {
     /*border: 1px solid #ccc;*/
 }
 
-.carousel > .c-img {
+.carousel-banner > .c-img {
     position: absolute;
     display: block;
     width: 2200px;
     height: 220px;
 }
 
-.carousel > .c-img > li {
+.carousel-banner > .c-img > li {
     display: block;
     width: 440px;
     height: 220px;
     float: left;
 }
 
-.carousel > .c-img > li > a {
+.carousel-banner > .c-img > li > a {
     display: block; 
     width: 100%;
 }
