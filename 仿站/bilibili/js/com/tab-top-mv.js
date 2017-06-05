@@ -1,5 +1,7 @@
 
 
+define(['jquery'], function( $ ) {
+
 var TopMv = (function() {
     function _TopMv($target) {
         this.$ct = $target;
@@ -97,5 +99,12 @@ var TopMv = (function() {
 
 })();
 
+    return TopMv;
 
-TopMv.init($('.hot-mv'));
+
+});
+
+
+
+
+// TopMv.init($('.hot-mv'));
