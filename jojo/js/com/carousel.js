@@ -1,5 +1,4 @@
 
-
 define(['jquery'], function( $ ) {
     var Carousel = (function(){
                 function _Carousel($ct) {
@@ -32,18 +31,13 @@ define(['jquery'], function( $ ) {
                                         width: $slidesUl.children().length * $slidesWidth + 'px',
                                         left: -$slidesWidth
                                      });
-
-                        // console.log($firstLi.width());
-                        // console.log(this.$slidesWidth);
-                        // console.log($slidesUl.children().length);
-                        // console.log($slidesWidth);
-                        // console.log($slidesUl.children().length * $slidesWidth + 'px');
                     this.lock = true;                               
                 };
 
                 _Carousel.prototype.bindEvent = function() {
                         var that = this;
                         this.$carouselBox.on('mouseenter', function() {
+                            // console.log(that.check);
                             clearInterval(that.check);
                         });    // 鼠标移动到图片上轮播停止
                         this.$carouselBox.on('mouseleave', function() {
@@ -59,15 +53,11 @@ define(['jquery'], function( $ ) {
                         this.$BtnPrev.on('click', function() {
                             that.prev(1);
                             that.gotoBtn();
-                            clearInterval(that.check);
-                            that.auto();
                         });
 
                         this.$BtnNext.on('click', function() {
                             that.next(1);
                             that.gotoBtn();
-                            clearInterval(that.check);
-                            that.auto();
                         });
                 };
 
@@ -113,13 +103,9 @@ define(['jquery'], function( $ ) {
                     var that = this;
                     this.check = setInterval(function() {
                         that.next(1);
-                    }, 3000);
+                    }, 3500);
                 };
 
-                _Carousel.prototype.stopPlay = function() {
-                    var that = this;
-                    
-                };
 
                 
                 return {

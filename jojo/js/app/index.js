@@ -1,4 +1,4 @@
-define(['jquery', 'carousel'], function($, Carousel){
-    console.log($('.carousel > li:first'));
+define(['jquery', 'carousel', 'gotoTop'], function($, Carousel, GoToTop){
     Carousel.init($('.carousel'));
+    GoToTop.init();
 })

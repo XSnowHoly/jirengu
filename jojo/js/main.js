@@ -4,7 +4,7 @@ require.config({
     paths: {
         jquery: 'lib/jquery',
         carousel: 'com/carousel',
-        TabTopMv: 'com/tab-top-mv'
+        gotoTop: 'com/gotoTop'
     }
 
 

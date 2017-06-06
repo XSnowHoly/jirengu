@@ -77,7 +77,7 @@ span {
     /*background:rgba(0,0,0,0.4);*/
     
     z-index: 100;
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 /*.header-nav:before {
     content: '';
