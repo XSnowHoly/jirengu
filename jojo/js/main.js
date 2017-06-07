@@ -4,7 +4,9 @@ require.config({
     paths: {
         jquery: 'lib/jquery',
         carousel: 'com/carousel',
-        gotoTop: 'com/gotoTop'
+        gotoTop: 'com/gotoTop',
+        waterFall: 'com/waterFall',
+        loadBtn: 'com/loadBtn'
     }
 
 

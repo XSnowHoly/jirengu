@@ -339,6 +339,63 @@ nav img {
     width: 30em;
 }
 
+/*图片瀑布流*/
+.waterfull {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.imgUl {
+    position: relative;
+    display: block;
+    width: 1400px;
+    height: 1000px;
+}
+
+.imgUl > li {
+    position: absolute;
+    border: 1px solid #ccc;
+    margin: 10px;
+    transition: all .6s;
+    box-shadow: 1px 2px 6px #333;
+    display: block;
+    width: 320px;
+
+}
+
+.imgUl > li > a {
+    display: block;
+    width: 100%;
+}
+
+.imgUl img {
+    vertical-align: middle;
+    border: none;
+    width: 100%;
+}
+
+.imgUl > li:hover {
+            transform: scale(1.2,1.2);
+            z-index:100;
+        }
+
+.loadBtn {
+    margin: 10px auto;
+    width: 100px;
+    height: 60px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px #000;
+    background: #507BDF;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+
+}
+
+/*图片瀑布流结束*/
+
 .writer {
     background: #E1F2D9;
     overflow: hidden;

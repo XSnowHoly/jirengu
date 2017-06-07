@@ -2,19 +2,20 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8" />
-    <title>JOJO的奇幻冒险</title>
+    <meta name="referrer" content="no-referrer">
+    <title>JOJO的奇幻冒险</title>   
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <nav>
         <div id="nav">
             <a href="#"><img src="images/jojo-logo.png"  alt="" /></a>
-            <ul>
-                <li><a href="#one">作品简介</a></li>
-                <li><a href="#two">作品内容</a></li>
-                <li><a href="#three">主要角色</a></li>
-                <li><a href="#four">关于作者</a></li>
-                <li><a href="#five">联系我们</a></li>
+            <ul class="nav_menu">
+                <li><a href="#" data-src='one'>作品简介</a></li>
+                <li><a href="#" data-src='two'>作品内容</a></li>
+                <li><a href="#" data-src='three'>主要角色</a></li>
+                <li><a href="#" data-src='four'>关于作者</a></li>
+                <li><a href="#" data-src='five'>联系我们</a></li>
             </ul>
         </div>
     </nav>
@@ -142,6 +143,19 @@
              </li>
          </ul>
      </div>
+    <div class="waterfull clearfix">
+        <ul class="imgUl clearfix">
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201604/14/20160414205757_GRzTw.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201604/14/20160414205757_GRzTw.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201605/27/20160527181001_xurGN.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201605/27/20160527181001_xurGN.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201603/04/20160304064817_XPicQ.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201603/04/20160304064817_XPicQ.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201601/09/20160109134600_Xaz3K.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201601/09/20160109134600_Xaz3K.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201604/14/20160414210808_Kmw48.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201604/14/20160414210808_Kmw48.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201605/13/20160513195302_BQCmF.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201605/13/20160513195302_BQCmF.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201503/21/20150321010504_U2XzR.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201503/21/20150321010504_U2XzR.thumb.700_0.jpeg" alt=""></a></li>
+            <li><a href="https://b-ssl.duitang.com/uploads/item/201602/11/20160211223029_hywcu.thumb.700_0.jpeg" target="_blank"><img src="https://b-ssl.duitang.com/uploads/item/201602/11/20160211223029_hywcu.thumb.700_0.jpeg" alt=""></a></li>
+        </ul>
+     </div>   
+     <div class="loadBtn">加载更多</div>
      <div class="writer" id="four">
          <div class="writer-des clearfix">
              <h1 class="c-title">关于作者</h1>
@@ -171,5 +185,6 @@
         </div>
     </div>
 </body>
-<script data-main="js/main.js" src="js/require.js"></script>
+<script data-main="js/disc/main-built.js" src="js/require.js"></script>
+
 </html>
