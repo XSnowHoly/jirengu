@@ -672,7 +672,7 @@ span {
 /*推广区域开始*/
 
 .promotion-box {
-    height: 194px;
+    /*height: 194px;*/
     margin-top: 40px;
 }
 
@@ -835,6 +835,91 @@ span {
     border-radius: 6px;
 }
 
+.pb-banner {
+    float: left;
+    width: 100%;
+    height: 96px;
+    margin-top: 42px;
+    border-radius: 3px;
+}
+
+.pb-banner a {
+    display: block;
+}
+
+.pb-banner img {
+    width: 100%;
+    border-radius: 3px;
+}
+
 
 /*推广区域结束*/
 
+/*直播区域开始*/
+.live-box {
+    margin-top: 16px;
+}
+
+.live-l {
+    width: 880px;
+    height: 135px;
+    float: left;
+    margin-right: 20px;
+}
+
+.live-l-header {
+    width: inherit;
+    height: 34px;
+}
+
+.live-l-header > p,
+.live-l-header > p > span {
+    display: inline-block;
+    vertical-align: super;
+    font-size: 0;
+}
+
+.live-l-header > p {
+    margin-left: 20px;
+    color: #99A2AA;
+    font-size: 14px;
+}
+
+.live-l-header > p > span {
+    vertical-align: bottom;
+    color: #00A1D6;
+    font-size: 14px;
+}
+
+.live-l-header > a {
+    position: relative;
+    display: inline-block;
+    vertical-align: super;
+    margin-left: 40px;
+    padding: 0 10px;
+    color: #6D757A;
+}
+
+.live-l-header > a:before {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: -8px;
+    content: '';
+    display: block;
+    background: url(../images/icons.png) -665px -1114px no-repeat;
+}
+
+.live-l-header > a:hover {
+    color: #00A1D6;
+}
+
+.live-logo {
+    background-position: -141px -656px;
+}
+
+
+
+
+/*直播区域结束*/
