@@ -6,6 +6,7 @@ body,html {
     background: #fff;
     color: #222;
     width: 100%;
+    min-width: 1160px;
 }
 
 a {
@@ -138,6 +139,7 @@ span {
 .header-nav {
     position: absolute;
     width: 100%;
+    min-width: 1160px;
     height: 42px;
     /*background:rgba(0,0,0,0.4);*/
     
