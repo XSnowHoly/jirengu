@@ -66,29 +66,29 @@ body {
     display: block;
     width: 325px;
     height: 325px;
-    background: url(../images/saber.png) no-repeat -22px -40px;  
+    background: url(../images/saber.png) no-repeat -22px -38px;  
 }
 
 .main li:nth-child(2) .img {
-    background: url(../images/saber.png) no-repeat -360px -40px;
+    background-position: -360px -38px;
 }
 .main li:nth-child(3) .img {
-    background: url(../images/saber.png) no-repeat -698px -40px;
+    background-position: -698px -38px;
 }
 .main li:nth-child(4) .img {
-    background: url(../images/saber.png) no-repeat -1038px -40px;
+    background-position: -1038px -38px;
 }
 .main li:nth-child(5) .img {
-    background: url(../images/saber.png) no-repeat -22px -406px;
+    background-position: -22px -406px;
 }
 .main li:nth-child(6) .img {
-    background: url(../images/saber.png) no-repeat -360px -406px;
+    background-position: -360px -406px;
 }
 .main li:nth-child(7) .img {
-    background: url(../images/saber.png) no-repeat -698px -385px;
+    background-position: -698px -385px;
 }
 .main li:nth-child(8) .img {
-    background: url(../images/saber.png) no-repeat -1043px -406px;
+    background-position: -1043px -406px;
 }
 
 .main p {
