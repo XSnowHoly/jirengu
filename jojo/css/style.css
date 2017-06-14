@@ -11,6 +11,9 @@ img {
 body,
 html {
     height: 100%;
+    width: 100%;
+    min-width: 1600px;
+
 }
 
 a {
@@ -213,6 +216,7 @@ nav img {
 
 #content {
     margin-top: 100px;
+    /*overflow: hidden;*/
 }
 
 #content .description {
@@ -283,7 +287,7 @@ nav img {
 
 .role li {
     position: relative;
-    width: 1600px;
+    min-width: 1600px;
     height: 500px;
     margin: 0 auto;
     padding-bottom: 100px;
