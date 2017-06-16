@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack" 
+    "start": "webpack"
   },
   "author": "xsnowholy",
   "license": "ISC",
   "devDependencies": {
     "webpack": "^2.6.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
   }
 }

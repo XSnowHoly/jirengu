@@ -1,6 +1,5 @@
-
-define(['jquery', 'waterFall'], function($, WaterFall) {
-
+var $ = require('jquery');
+var WaterFall = require('./waterFall.js');
 
     var LoadBtn = (function() {
 
@@ -59,5 +58,4 @@ define(['jquery', 'waterFall'], function($, WaterFall) {
     })();
 
 
-    return LoadBtn;
-});
+    module.exports = LoadBtn;

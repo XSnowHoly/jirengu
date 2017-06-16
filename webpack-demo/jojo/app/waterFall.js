@@ -1,5 +1,5 @@
+var $ = require('jquery');
 
-define(['jquery'], function($) {
 
  var WaterFall = (function(){
             function init(){
@@ -51,7 +51,6 @@ define(['jquery'], function($) {
         })()
 
 
-    return WaterFall;
-})
+        module.exports = WaterFall;
         
        

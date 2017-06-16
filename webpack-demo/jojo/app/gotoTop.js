@@ -1,4 +1,5 @@
-define(['jquery'], function($) {
+var $ = require('jquery');
+
 
     var gotoTop = (function() {
 
@@ -67,5 +68,4 @@ define(['jquery'], function($) {
 
 
 
-    return gotoTop;
-});
+    module.exports = gotoTop;

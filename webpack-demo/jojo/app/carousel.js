@@ -1,5 +1,5 @@
 
-define(['jquery'], function( $ ) {
+var $ = require('jquery');
     var Carousel = (function(){
                 function _Carousel($ct) {
                     this.$ct = $ct;
@@ -117,7 +117,6 @@ define(['jquery'], function( $ ) {
                 }
 
             })();
-    return Carousel;
-});
+  module.exports = Carousel;
 
         // Carousel.init($('.carousel'));
