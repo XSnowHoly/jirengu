@@ -1,0 +1,132 @@
+/* 
+* @Author: anchen
+* @Date:   2017-05-01 13:06:20
+* @Last Modified by:   anchen
+* @Last Modified time: 2017-05-01 20:20:58
+*/
+ul,
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: block;
+}
+h3 {
+    padding: 0;
+    margin: 0;
+}
+p {
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.menus,
+.goods {
+    float: left;
+}
+
+.tab-box {
+  margin-top: 20px;
+}
+
+.menus > li{
+    width: 80px;
+    height: 35px;
+    float: left;
+/*    border: 1px solid #069DD5;*/
+/*    border-radius: 6px;*/
+    font-size: 18px;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+}
+
+li.active {
+    background: #069DD5;
+    color: #fff;
+}
+
+.goods {
+    width: 830px;
+    border: 2px solid #069DD5;
+    border-radius: 0 6px 6px 6px;
+    display: none;
+}
+
+.goods > li {
+    position: relative;
+    float: left;
+    left: -4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left:  20px;
+    width: 250px;
+    height: 350px;
+    border: 1px solid #ccc;
+    transition: all .3s;
+}
+.goods > li:hover {
+    border: 1px solid #069DD5;
+}
+
+.goods-img {
+    width: 100%;
+}
+
+.goods h3 {
+    font-size: 18px;
+    padding: 10px;
+}
+
+.goods .price {
+    padding-left: 10px;
+    font-size: 18px;
+    color: #FF4400;
+    font-weight: bold;
+}
+
+.goods.active {
+    display: block;
+}
+
+.cover {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-color:rgba(0,0,0,0.2);
+    text-align: center;
+    transition: all .3s;
+    opacity: 0;
+}
+.cover:hover {
+    opacity: 1;
+}
+
+.cover:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.cover a {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+    height: 40px;
+    border: 1px solid #0769AD;
+    border-radius: 3px;
+    background: #fff;
+    color: #0769AD;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+}
