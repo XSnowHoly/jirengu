@@ -18,9 +18,9 @@
             width: 20px;
             height: 50px;
             background: #fff;
-            margin: 50px auto
-            animation: run infinite 2s linear;
-            transform: scale(1, 2);
+            margin: 50px auto;
+            animation: run infinite 1s ease-in-out;
+            animation-delay: .2s;
         }
 
         .loading_1:before {
@@ -31,6 +31,8 @@
             width: 20px;
             height: 50px;
             background: #fff;
+
+            animation: run infinite 1s ease-in-out;
         }
 
         .loading_1:after {
@@ -42,14 +44,18 @@
             width: 20px;
             height: 50px;
             background: #fff;
+            animation: run infinite 1s ease-in-out;
+            animation-delay: .3s;
         }
 
         @keyframes run {
-            from {
-                transform: scale(1, 1)
+            0%, 60%, 100% {
+                box-shadow: 0 0 #fff;
+                height: 40px;
             }
-            to {
-                transform: scale(1, 2);
+            20% {
+                box-shadow: 0 -20px #fff;
+                height: 50px;
             }
         }
 
