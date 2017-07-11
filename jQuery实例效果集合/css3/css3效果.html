@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>一些CSS3效果</title>
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <style>
+        .layout {
+          width: 1000px;
+          margin: 100px auto;
+        }
+
+        .radius {
+          width: 100px;
+          height: 50px;
+          background: #DE3118;
+          border-radius: 50px 50px 0 0;
+        }
+
+        .cricle {
+          width: 100px; 
+          height: 100px;
+          background: #73DC7E;
+          border-radius: 50px;
+        }
+
+        .box-shadow {
+          width: 100px;
+          height: 120px;
+          background: #F9DA84;
+          box-shadow: 4px 5px 5px #333;
+        }
+
+        .default {
+          width: 100px;
+          height: 150px;
+          border: 2px dashed #333;
+        }
+
+        .change {
+          float: left;
+          width: 100px;
+          height: 150px;
+          background: #FFE3E3;
+          transform: scale(2,.5);
+        }
+
+        .translate {
+          float: left;
+          width: 100px;
+          height: 150px;
+          background: #B6DBFF;
+          transform: translate(20px, 25px);
+        }
+
+        .rotate {
+          float: left;
+          width: 100px;
+          height: 150px;
+          background: #A8AEFF;
+          transform: rotate(35deg);
+        }
+
+        .rotateY {
+          float: left;
+          width: 100px;
+          height: 150px;
+          background: #B6DBFF;
+          transform: translate(20px, 25px) rotateX(60deg);
+        }
+
+        .gradient {
+          width: 400px;
+          height: 200px;
+          background: linear-gradient(to right bottom, #B6DBFF, #73DC7E, #A8AEFF);
+        }
+
+        .transiton {
+          width: 200px;
+          height: 150px;
+          background: #9DE1FF;
+          transition: all .3s;
+        }
+
+        .transiton:hover {
+          transform: scale(2,.5) rotate(60deg);
+        }
+
+
+
+        .animation {
+          width: 100px;
+          height: 50px;
+          background: #DE3118;
+          border-radius: 50px 50px 0 0;
+          animation: myfirst infinite 5s linear;
+        }
+
+        @keyframes myfirst {
+          0 {background:red;}
+          25% { width:100px; height:100px; border-radius: 0;}
+          50% { width: 50px height: 42px; transform: translate(500px, 20px) rotate(360deg); background: #73DC7E;  }
+          100% { height:100px; border-radius:50px; background:yellow;}
+        }
+
+        .torus {
+          position: relative;
+          margin-top: 50px;
+          width: 100px;
+          height: 100px;
+          border: 50px solid #fff;
+          border-radius: 50%;
+        }
+
+        .rou {
+          position: absolute;
+          top: -50px;
+          left: -50px;
+          width: 100px;
+          height: 100px;
+          border: 50px solid #ccc;
+          border-top: 50px solid transparent;
+          border-radius: 50%;
+          animation: run infinite 1s linear;
+          
+        }
+
+        @keyframes run {
+          from {
+            transform: rotate(0);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        } 
+    </style>
+</head>
+<body>
+    <div class="layout">
+      <h2>半圆</h2>
+      <div class="radius"></div>
+      <h2>圆形</h2>
+      <div class="cricle"></div>   
+      <h2>div阴影</h2>
+      <div class="box-shadow"></div>
+      <h2>2D 转换：放大、缩小、偏移、旋转</h2>
+      <h2>放大/缩小</h2>      
+      <div class="change"></div>
+      <div class="default"></div>
+      <h2>偏移</h2>      
+      <div class="translate"></div>
+      <div class="default"></div>
+      <h2>旋转</h2>      
+      <div class="rotate"></div>
+      <div class="default"></div>
+      <h2>3D 转换：移动、旋转</h2>
+      <div class="rotateY"></div>
+      <div class="default"></div>
+      <h2>背景色渐变</h2>
+      <div class="gradient"></div>
+      <h2>过渡效果</h2>
+      <div class="transiton"></div>
+      <h2>动画</h2>
+      <div class="animation"></div>
+      <div class="torus">
+        <div class="rou"></div>
+      </div>      
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery实现轮播图</title>
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <!-- 开启响应式 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .carousel {
+            position: relative;
+            width: 1000px;
+            height: 575px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .carousel a {
+            display: block;
+        }
+        .carousel .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .carousel .btn.prev {
+
+        }
+        .carousel .btn.next {
+            right: 0;
+        }
+
+
+        .slides-img {
+            position: absolute;
+            display: block;
+            width: 4000px;
+            height: 575px;
+        }
+
+        .slides-img > li {
+            float: left;
+        }
+
+        .slides-img img {
+            width: 1000px;
+            height: 575px;
+        }
+
+        .shulling-btn {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .shulling-btn > li {
+            float: left;
+            margin: 20px 20px;
+            width: 50px;
+            height: 10px;
+            background: #fff;
+            border: 2px solid #fff;
+            cursor: pointer;
+            border-radius: 6px;
+            box-shadow: 2px 2px 3px #333;
+        }
+        .shulling-btn .active {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel clearfix">
+        <ul class="slides-img">
+            <li data-index="0"><a href="#"><img src="images/1.jpg" alt=""></a></li>
+            <li data-index="1"><a href="#"><img src="images/2.jpg" alt=""></a></li>
+            <li data-index="2"><a href="#"><img src="images/3.jpg" alt=""></a></li>
+            <li data-index="3"><a href="#"><img src="images/4.jpg" alt=""></a></li>
+        </ul>
+        <a href="#" class="btn prev"><img src="images/prev.png" alt=""></a>
+        <a href="#" class="btn next"><img src="images/next.png" alt=""></a>
+        <ul class="shulling-btn">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+        ///////自定义变量/////////
+        var $carouselBox = $('.carousel'),
+            $slidesUl = $('.slides-img'),               
+            $slidesLi = $('.slides-img > li'),
+            $prev = $('.btn.prev'),
+            $next = $('.btn.next'),
+            $shullingBtn = $('.shulling-btn > li');
+
+        var $firstLi = $slidesLi.first(),
+            $lastLi = $slidesLi.last(),
+            $slidesNum = $slidesLi.length;
+            $slidesWidth = $firstLi.width();
+            $index = 0;
+
+        $slidesUl.append($firstLi.clone());      // 添加克隆元素
+        $slidesUl.prepend($lastLi.clone());      // 添加克隆元素
+        $slidesUl.css({                        
+                        width: $slidesUl.children().length * $slidesWidth + 'px',
+                        left: -$slidesWidth
+                     });
+        ///////绑定事件/////////
+        $carouselBox.on('mouseenter', stopTime);    // 鼠标移动到图片上轮播停止
+        $carouselBox.on('mouseleave', auto);        // 鼠标移开后开始轮播
+
+        $prev.on('click', function(e) {
+            e.preventDefault();
+            prev();
+        });
+
+        $next.on('click', function(e) {
+            e.preventDefault();
+            next();
+        });
+
+        $shullingBtn.on('click', function (){
+            $BtnIndex = $(this).index();
+            if($index === $BtnIndex) return;
+            console.log($BtnIndex),
+            console.log($index);
+            ($index > $BtnIndex) ? prev($index-$BtnIndex) : next($BtnIndex-$index);
+        });
+
+
+
+        var lock = true;           //  状态锁防止连续点击重复执行函数
+
+        ///////处理函数/////////
+        function prev(n=1) {
+            if(!lock) return;
+            lock = false;
+            $slidesUl.animate({ 'left': '+='+ $slidesWidth*n +'px' }, function() {
+                $index -= n;
+                if($index < 0) {
+                $('.slides-img').css({ 'left': -($slidesWidth*$slidesNum) });
+                $index = $slidesNum -1;
+                
+            }
+            lock = true;
+            gotoBtn();
+            });
+            
+        }
+
+        function next(n=1) {
+            if(!lock) return;
+            lock = false;
+            $slidesUl.animate({ 'left': '-='+ $slidesWidth*n +'px' }, function() {
+                $index += n;
+                if($index === $slidesNum) {
+                $('.slides-img').css({ 'left': -$slidesWidth });
+                $index = 0;
+                
+            }
+            lock = true;
+            gotoBtn();
+            });
+            
+        }
+
+        function gotoBtn() {
+            $shullingBtn.removeClass('active')
+            .eq($index)
+            .addClass('active');
+        }
+        
+        // 自动轮播
+        function auto() {
+            check = setInterval(next, 3500);
+            
+        }
+        // 停止自动轮播
+        function stopTime() {
+            clearInterval(check);
+        }
+        auto();
+    </script>
+</body>
+</html>

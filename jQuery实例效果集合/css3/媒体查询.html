@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>媒体查询demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .layout {
+            width: 600px;
+            margin: 50px auto;
+        }
+
+        .layout > p {
+            padding-top: 20px;
+            font-size: 26px;
+        }  
+
+        
+
+        @media (min-width: 1200px){
+            body {
+                background: #FF5546;
+            }
+            .layout > p:nth-child(1) {
+                border-bottom: 2px solid #fff;
+            }
+        }
+
+        @media (max-width: 1200px) and (min-width: 900px){
+            body {
+                background: #7DD43B;
+            }
+            .layout > p:nth-child(2) {
+                border-bottom: 2px solid #FF5546;
+            }          
+        }
+
+        @media (max-width: 900px) and (min-width: 600px){ 
+            body {
+                background: #FFCA00;
+            }
+            .layout > p:nth-child(3) {
+                border-bottom: 2px solid #357ACE;
+            }
+        }     
+
+        @media (max-width: 600px) {
+            body {
+                background: #82878C;
+            }
+            .layout {
+                width: 500px;
+            }
+            .layout > p {
+                font-size: 22px;
+            }
+            .layout > p:nth-child(4) {
+                border-bottom: 2px solid #fff;
+            }
+        }           
+
+        
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <p>在页面宽度> 1200px 时页面背景为红色 </p>
+        <p>在页面1200px>=宽度> 900px  时页面背景为绿色</p>
+        <p>在页面900px>=宽度> 600px  时页面背景为黄色</p>
+        <p>宽度<=600px 背景为灰色</p>
+    </div>
+</body>
+</html>

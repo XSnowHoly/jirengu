@@ -1,0 +1,141 @@
+a {
+    text-decoration: none;
+}
+
+body {
+    background: url(../images/fsn.png) no-repeat;
+    background-size:cover;
+}
+
+.layout {
+    width: 1360px;
+    margin: 20px auto 0; 
+    margin-bottom: 20px; 
+    opacity: .9;
+    /*border:  1px solid #ccc;*/
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.layout > .header {;
+    text-align: center;
+    color: #555;
+}
+
+.header h1 {
+    display: inline-block;
+    font-size: 2em;
+    color: #80BF93;
+    letter-spacing: 5px;
+    text-shadow: 4px 4px 4px #000;
+    cursor: pointer;
+}
+.header p {
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 4px 4px 4px #000;
+}
+
+
+.layout > .main {
+    display: block;
+    margin-left: -20px;
+    list-style: none;
+    text-align: center;
+}
+
+.main li {
+    display: block;
+    width: 325px;
+    box-shadow: 1px 2px 8px #555;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    background: #9BBCE6;
+    overflow: hidden;
+}
+
+.main .menu {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.img-box {
+    width: 325px;
+    height: 325px;
+    overflow: hidden;
+}
+
+.main .img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../images/tab.png) no-repeat center center;  
+    background-size: cover;
+    transition: all .3s;
+}
+
+.main .img:hover {
+    transform: scale(1.2,1.2);
+}
+
+.main li:nth-child(2) .img {
+    background: url(../images/addLi.png) no-repeat center center; 
+    background-size: cover;
+}
+.main li:nth-child(3) .img {
+    background: url(../images/imgload.png) no-repeat center center; 
+    background-size: cover;
+}
+.main li:nth-child(4) .img {
+    background: url(../images/carousel.png) no-repeat center center; 
+    background-size: cover;
+}
+.main li:nth-child(5) .img {
+    background: url(../images/waterfall.png) no-repeat center center; 
+    background-size: cover;
+}
+.main li:nth-child(6) .img {
+    background: url(../images/loading.png) no-repeat center center; 
+    background-size: cover;
+}
+.main li:nth-child(7) .img {
+    background-position: -698px -385px;
+}
+.main li:nth-child(8) .img {
+    background-position: -1043px -395px;
+}
+
+.main p {
+    display:inline-block;
+    color: #fff;
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #fff;
+  background: #72B890;
+  border-radius: 3px;
+  margin-left: 30px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    transition: all .5s;
+}
+
+.btn:first-child {
+    margin: 10px 0;
+}
+
+.demo-title {
+    font-size: 24px;
+    line-height: 35px;
+    height: 35px;
+}
+
