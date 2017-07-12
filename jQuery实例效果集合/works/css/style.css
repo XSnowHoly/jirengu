@@ -70,12 +70,6 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    body,html {
-        min-width: 1000px;
-    }
-}
-
 
 .main .menu {
     margin: 20px 0;
