@@ -41,6 +41,8 @@
 
 .icon-gongzuo:before { content: "\e620"; }
 
+.icon-xiangmu:before { content: "\e611"; }
+
 .icon-github:before { content: "\e752"; }
 
 .icon-evaluate:before { content: "\e706"; }
@@ -72,7 +74,8 @@
 .icon-xueli:before,
 .icon-gongzuo:before,
 .icon-jineng:before,
-.icon-evaluate:before {
+.icon-evaluate:before,
+.icon-xiangmu:before {
   position: relative; left: -20px; font-size: 30px; 
   color: #A4C2DE;
 }

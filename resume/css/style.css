@@ -1,4 +1,5 @@
-body {
+body,html {
+    height: 100%;
 	font-family: "Microsoft YaHei","iconfont"  !important;
 }
 
@@ -25,6 +26,7 @@ li {
 }
 
 .aside {
+    height: 1360px;
     width: 350px;
     float: left;
     margin-left: 50px;
@@ -96,7 +98,8 @@ li {
 .main h3 {
 	display: inline-block;
 	width: 100%;
-	padding: 15px 0 15px;
+	padding: 10px 0 10px;
+    margin-top: 5px;
 	text-indent: 50px;
 	border-bottom: 2px solid #575757;
 	color: #434343;
@@ -108,6 +111,7 @@ li {
     display: inline-block;
     width: 40%;
     margin-left: 20px;
+    margin-top: 10px;
     margin-bottom: 5px;
     font-size: 18px;
     letter-spacing: 0.1em;
@@ -160,4 +164,8 @@ li {
     -moz-transform: skew(30deg);
     -o-transform: skew(30deg);
     transform: skew(30deg);
+}
+
+.skill p {
+    margin-bottom: 10px;
 }
