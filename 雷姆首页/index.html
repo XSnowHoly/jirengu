@@ -371,7 +371,10 @@
             play(($slidesNum+$index-1) % $slidesNum);
         }
 
-        function play($idx=0) {
+        function play($idx) {
+        	if (!$idx) {
+        		$idx = 0;
+        	}
             if(!$lock) return;
             $lock = false;
             $slidesLi.eq($index).fadeOut(500);
