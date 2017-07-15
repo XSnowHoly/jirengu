@@ -1,6 +1,7 @@
 body,html {
     height: 100%;
 	font-family: "Microsoft YaHei","iconfont"  !important;
+    background: url(../images/export_bg.jpg) 0;
 }
 
 a {
