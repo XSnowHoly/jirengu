@@ -13,6 +13,12 @@ li {
 	list-style: none;
 }
 
+strong {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #333;
+}
+
 .layout {
     width: 1200px;
     margin: 50px auto 100px;
