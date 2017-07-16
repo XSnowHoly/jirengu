@@ -155,32 +155,17 @@ input{
  	color: #FFFFFF;
  	background: #2578C8;
 }
-#top_box #top_box_t .right li.right_menu ul.one_a{
-	position: absolute;
-	top: 30px;
-	left: 0px;
-	width: 80px;
-	/*border:1px solid blue;*/
-}
-#top_box #top_box_t .right li.right_menu ul.one_b{
-	position: absolute;
-	top: 30px;
-	left: 0px;
-	width: 80px;
-	/*border:1px solid blue;*/
-}
-#top_box #top_box_t .right li.right_menu ul.one_c{
-	position: absolute;
-	top: 30px;
-	left: 0px;
-	width: 80px;
-	/*border:1px solid blue;*/
-}
-#top_box #top_box_t .right li.right_menu li{
+#top_box #top_box_t #menu > li:hover .children_menu {
 	display: block;
-	width: 80px;
-	height: 20px;
 	text-align: center;
+}
+
+#top_box #top_box_t .right li.right_menu ul.children_menu{
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	width: 80px;
+	/*border:1px solid blue;*/
 }
 /*联级菜单结束*/
 #top_box #top_box_t .right li#en a{
