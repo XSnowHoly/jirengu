@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>jQuery效果实例集合</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/buttons.css">
+    <style>
+      body {
+        background: url(./images/fsn.png) center center no-repeat;
+        background-size:cover;
+      }
+      .title {
+        margin-top: 20px;
+      }
+      .title > h1 {
+        color: #54AFF2;
+        letter-spacing: 5px;
+        text-shadow: 4px 4px 4px #333;
+        cursor: pointer;
+      }
+      .title > h2 {
+        margin-top: 40px;
+        color: #fff;
+        text-shadow: 4px 4px 4px #000;
+      }
+      .main {
+        margin-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      @media (max-width: 768px){
+        .main {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+      .works-box {
+        border: 1px solid #ccc;
+        padding: 4px;
+        height: 450px;
+        margin-bottom: 20px;
+        background: rgba(255,255,255, .6);
+        text-align: center;
+      }
+      .img-box {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+      }
+      .main .img-box .img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url(./images/tab.png) no-repeat center center;  
+        background-size: cover;
+        transition: all .3s;
+      }
+      .main .img.img_1 {
+          background: url(./images/addLi.png) no-repeat center center; 
+          background-size: cover;
+      }
+      .main .img.img_2 {
+          background: url(./images/imgload.png) no-repeat center center; 
+          background-size: cover;
+      }
+      .main .img.img_3 {
+          background: url(./images/carousel.png) no-repeat center center; 
+          background-size: cover;
+      }
+      .main .img.img_4 {
+          background: url(./images/waterfall.png) no-repeat center center; 
+          background-size: cover;
+      }
+      .main .img.img_5 {
+          background: url(./images/loading.png) no-repeat center center; 
+          background-size: cover;
+      }
+      .main .img:hover {
+        transform: scale(1.2,1.2);
+      }
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="title text-center container">
+      <h1><strong>jQuery效果实例集合</strong></h1>
+      <h2>请葬我以花，咏我以歌，送我以诗，赞我以爱。</h2>
+    </div>
+    <div class="main container-fluid">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="works-box">
+          <a href="../tab-demo/index.html" class="btn demo-title button button-block button-primary button-large" target="_blank">tab组件</a>
+            <div class="img-box">
+                <a href="../tab-demo/index.html" class="img" target="_blank"></a>
+            </div>
+            <div class="menu">
+              <a href="https://github.com/XSnowHoly/jirengu/tree/master/tab-demo" class="btn button button-primary" target="_blank">查看源代码</a>
+            </div>
+            <h3><a href="https://github.com/XSnowHoly" target="_blank">by @Xsnowholy</a></h3>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="works-box">
+          <a href="../tab-demo/index.html" class="btn demo-title button button-block button-primary button-large" target="_blank">tab添加功能</a>
+            <div class="img-box">
+                <a href="../addLi-demo/index.html" class="img img_1" target="_blank"></a>
+            </div>
+            <div class="menu">
+              <a href="https://github.com/XSnowHoly/jirengu/tree/master/addLi-demo" class="btn button button-primary" target="_blank">查看源代码</a>
+            </div>
+            <h3><a href="https://github.com/XSnowHoly" target="_blank">by @Xsnowholy</a></h3>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="works-box">
+          <a href="../jQuery实现懒加载/图片懒加载/index.html" class="btn demo-title button button-block button-primary button-large" target="_blank">图片懒加载</a>
+            <div class="img-box">
+                <a href="../jQuery实现懒加载/图片懒加载/index.html" class="img img_2" target="_blank"></a>
+            </div>
+            <div class="menu">
+              <a href="https://github.com/XSnowHoly/jirengu/tree/master/jQuery%E5%AE%9E%E7%8E%B0%E6%87%92%E5%8A%A0%E8%BD%BD/%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD" class="btn button button-primary" target="_blank">查看源代码</a>
+            </div>
+            <h3><a href="https://github.com/XSnowHoly" target="_blank">by @Xsnowholy</a></h3>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="works-box">
+          <a href="../jQuery实现轮播图/index.html" class="btn demo-title button button-block button-primary button-large" target="_blank">轮播图组件</a>
+            <div class="img-box">
+                <a href="../jQuery实现轮播图/index.html" class="img img_3" target="_blank"></a>
+            </div>
+            <div class="menu">
+              <a href="https://github.com/XSnowHoly/jirengu/tree/master/jQuery%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE" class="btn button button-primary" target="_blank">查看源代码</a>
+            </div>
+            <h3><a href="https://github.com/XSnowHoly" target="_blank">by @Xsnowholy</a></h3>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="works-box">
+          <a href="../jQuery实现瀑布流-木桶流布局/瀑布流/index.html" class="btn demo-title button button-block button-primary button-large" target="_blank">图片瀑布流</a>
+            <div class="img-box">
+                <a href="../jQuery实现瀑布流-木桶流布局/瀑布流/index.html" class="img img_4" target="_blank"></a>
+            </div>
+            <div class="menu">
+              <a href="https://github.com/XSnowHoly/jirengu/tree/master/jQuery%E5%AE%9E%E7%8E%B0%E7%80%91%E5%B8%83%E6%B5%81-%E6%9C%A8%E6%A1%B6%E6%B5%81%E5%B8%83%E5%B1%80/%E7%80%91%E5%B8%83%E6%B5%81" class="btn button button-primary" target="_blank">查看源代码</a>
+            </div>
+            <h3><a href="https://github.com/XSnowHoly" target="_blank">by @Xsnowholy</a></h3>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="works-box">
+          <a href="../css3/loading.html" class="btn demo-title button button-block button-primary button-large" target="_blank">loading效果</a>
+            <div class="img-box">
+                <a href="../css3/loading.html" class="img img_5" target="_blank"></a>
+            </div>
+            <div class="menu">
+              <a href="https://github.com/XSnowHoly/jirengu/blob/master/css3/loading.html" class="btn button button-primary" target="_blank">查看源代码</a>
+            </div>
+            <h3><a href="https://github.com/XSnowHoly" target="_blank">by @Xsnowholy</a></h3>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
