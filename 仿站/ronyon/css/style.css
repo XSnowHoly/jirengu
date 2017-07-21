@@ -1,0 +1,196 @@
+body {
+    background: #fff;
+}
+
+
+.navbar {
+    border-bottom: 2px solid rgba(0,0,0, .1);
+    background: #fff;
+}
+
+.navbar-header {
+    height: 80px;
+    padding-top: 5px;
+}
+
+.navbar > .container {
+    height: 82px;
+}
+
+.nav {
+    margin-right: 75px;
+    font-size: 16px;
+}
+
+.nav > li > a {
+    line-height: 80px;
+    padding: 0 15px 0 15px;
+    color: #000;
+}
+
+.nav > li.active > a {
+    color: #fff;
+    background: #31a2e4;
+}
+
+.nav > li > a:focus {
+    background-color: #fff;
+}
+
+.nav > li > a:hover {
+    color: #fff;
+    background: #31a2e4;
+}
+
+.navbar-nav > li {
+    height: 80px;
+    line-height: 160px;
+}
+
+.navbar-nav > li > a {
+    height: inherit;
+}
+
+.phonetitle {
+    height: 82px;
+    color: #31a2e4;
+}
+
+
+
+.phonetitle > a {
+    position: relative;
+    line-height: 80px;
+    font-size: 20px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.phonetitle > a:after {
+    position: absolute;
+    top: 0;
+    left: -30px;
+    content: '';
+    width: 25px;
+    height: 25px;
+    background: url(../images/dianhua.png) center no-repeat;
+}
+
+
+.phonetitle > a:hover {
+    color: #31a2e4;
+}
+
+
+#myCarousel .item img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    padding: 0;
+    -webkit-transform: translate(-58%,-20%);
+        -ms-transform: translate(-58%,-20%);
+            transform: translate(-58%,-20%);
+}
+
+#myCarousel .item > .carousel-caption > img {
+    height: auto;
+}
+
+@media screen and (max-width: 1920px) {
+    #myCarousel {
+        height: 578px;
+    }
+
+    #myCarousel .item {
+        height: 578px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #myCarousel {
+        height: 378px;
+    }
+
+    #myCarousel .item {
+        height: 378px;
+    }
+}
+
+.carousel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    padding: 0;
+    -webkit-transform: translate(-58%,-50%);
+        -ms-transform: translate(-58%,-50%);
+            transform: translate(-58%,-50%);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.row img {
+    width: 100%;
+}
+
+.wecan {
+    margin-top: 50px;
+}
+
+.wecan img {
+    margin-bottom: 10px;
+}
+
+.row.wecan div {
+    padding: 0 20px 0 20px;
+}
+
+@media (min-width: 768px) {
+    .wecan .col-sm-2 {
+        width: 19.666667%;
+    }
+}
+
+.ct-product {
+    margin-top: 50px;
+}
+
+.productbox {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.productbox img {
+    height: 280px;
+}
+
+.caption h5 {
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+
+.scheme {
+    background: #f0f0f0;
+}
+
+.scheme .container > p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.solution {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+
