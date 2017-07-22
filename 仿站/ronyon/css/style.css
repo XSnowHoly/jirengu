@@ -169,7 +169,37 @@ body {
     margin-bottom: 20px;
 }
 
+
+.productbox div:hover img {
+    
+    transform: scale(1.2, 1.2);
+}
+
+.productbox div:hover .warp {
+    opacity: 1;
+}
+
+
+
+.product-img {
+    position: relative;
+    overflow: hidden;
+
+}
+
+.product-img .warp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgba(0,0,0, .5);
+    transition: all .3s;
+}
+
 .productbox img {
+    transition: all 5s ease-out;
     height: 280px;
 }
 
@@ -193,4 +223,121 @@ body {
     margin-bottom: 40px;
 }
 
+.solution div {
+    margin-top: 10px;
+}
 
+
+.solution .button {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.button > .btn {
+    width: 132px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 50px;
+    font-size: 16px;
+    color: #31a2e4;
+    border: 1px solid #31a2e4;
+    border-radius: 4px;
+    background: url(../images/yjiantou.png) 85px no-repeat;
+}
+
+.button > .btn:hover {
+    padding-right: 15px;
+    color: #fff;
+    background: #31a2e4;
+}
+
+.case {
+    background: url(../images/case_bg.jpg) top center no-repeat;
+    background-size: cover;
+}
+
+.case > .container {
+
+}
+
+.case-box {
+    margin-bottom: 60px;
+}
+
+.case-box > div {
+    margin-top: 20px;
+}
+
+
+@media (min-width: 1200px) {
+    .case-box > .col-md-3 {
+        min-height: 232px;
+    }
+}
+
+
+
+@media (max-width: 992px) {
+    .case-box > .col-xs-6 {
+        min-height: 328px;
+    }
+}
+
+@media (max-width: 768px) {
+    .case-box > .col-xs-6 {
+        min-height: 188px;
+    }
+}
+
+.case-box > .more > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #51b2dd;
+    text-decoration: none;
+}
+
+.case-box > .more > a:hover {
+    background: #fbbb04;
+}
+
+.more-main {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 70px 0 70px 0;
+}
+
+.case-box > .more p {
+    font-size: 26px;
+    color: #fff;
+}
+
+
+.footer {
+    color: #ececec;
+    background: #222;
+}
+
+.row.footer-info {
+    margin-top: 40px;
+}
+
+.row.footer-info p {
+    margin-bottom: 5px;
+}
+
+.row.footer-info a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.row.footer-info a:hover {
+    color: #fff;
+}
+
+.footer > .container > p {
+    margin: 30px 0 50px 0;
+}
