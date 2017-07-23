@@ -195,6 +195,12 @@ body {
        height: 578px;
   }
 }
+@media screen and (max-width: 1024px) {
+    .carousel-caption img {
+        width: 350px;
+    }
+}
+
 @media screen and (max-width: 720px) {
     .swiper-container {
         height: 248px;
@@ -202,6 +208,10 @@ body {
    .swiper-container .swiper-wrappe {
        height: 248px;
   }
+
+  .carousel-caption img {
+        width: 210px;
+    }
 }
 .title {
     text-align: center;

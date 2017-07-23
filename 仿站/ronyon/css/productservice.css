@@ -12,8 +12,18 @@
     min-height: 378px;;
 }
 
+.carousel-caption {
+    width: 380px;
+    height: auto;
+}
+
 @media (max-width: 758px) {
     .banner > img {
         min-height: 248px;
+    }
+
+    .carousel-caption {
+        width: 55%;
+        height: auto;
     }
 }
