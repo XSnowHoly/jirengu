@@ -1,0 +1,19 @@
+.banner {
+    position: relative;
+    
+}
+
+
+.banner  img {
+    width: 100%;
+}
+
+.banner > img {
+    min-height: 378px;;
+}
+
+@media (max-width: 758px) {
+    .banner > img {
+        min-height: 248px;
+    }
+}
