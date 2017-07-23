@@ -197,10 +197,10 @@ body {
 }
 @media screen and (max-width: 720px) {
     .swiper-container {
-        height: 378px;
+        height: 248px;
    }
    .swiper-container .swiper-wrappe {
-       height: 378px;
+       height: 248px;
   }
 }
 .title {
