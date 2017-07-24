@@ -1,0 +1,43 @@
+.row.solution.solution-child {
+    margin-top: 10px;
+}
+
+.row.solution.solution-child > div {
+    margin-top: 20px;
+}
+
+.row.solution.solution-child div:nth-child(5) .solution-warp {
+    background: #00AC75;
+}
+
+.row.solution.solution-child div:nth-child(6) .solution-warp {
+    background: #ACA200;
+}
+
+.row.solution.solution-child div:nth-child(7) .solution-warp {
+    background: #AC6100;
+}
+
+.row.solution.solution-child div:nth-child(8) .solution-warp {
+    background: #0096AC;
+}
+
+.row.solution.solution-child div:nth-child(5) .solution-warp i {
+    height: 143px;
+    background-position: -7px -15px;
+}
+
+.row.solution.solution-child div:nth-child(6) .solution-warp i {
+    height: 143px;
+    background-position: -187px -15px;
+}
+
+.row.solution.solution-child div:nth-child(7) .solution-warp i {
+    height: 143px;
+    background-position: -362px -15px;
+}
+
+.row.solution.solution-child div:nth-child(8) .solution-warp i {
+    height: 143px;
+    background-position: -535px -15px;
+}
