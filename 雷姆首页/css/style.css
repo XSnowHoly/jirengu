@@ -434,12 +434,17 @@ input{
 	left: 6px;
     overflow: hidden;
 }
+.carousel img {
+	border: none;
+}
+
 .carousel a {
     display: block;
 }
 .carousel .btn {
     position: absolute;
     top: 50%;
+    top: 45%\9;
     transform: translateY(-50%);
 }
 .carousel .btn.prev {
@@ -476,7 +481,9 @@ input{
 .shulling-btn {
     position: absolute;
     bottom: 0;
+    *bottom: 20px;
     left: 50%;
+    left: 28%\9;
     transform: translateX(-50%);
 }
 .shulling-btn > li {
