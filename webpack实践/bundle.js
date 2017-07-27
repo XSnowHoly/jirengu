@@ -10432,7 +10432,7 @@ var $ = __webpack_require__(0);
                         var that = this;
                         this.$carouselBox.on('mouseenter', function() {
                             // console.log(that.check);
-                            clearInterval(that.check);
+                            that.stop();
                         });    // 鼠标移动到图片上轮播停止
                         this.$carouselBox.on('mouseleave', function() {
                             that.auto();
@@ -10493,8 +10493,14 @@ var $ = __webpack_require__(0);
                     .addClass('active');
                 };
 
+                _Carousel.prototype.stop = function() {
+                    var that = this;
+                    clearInterval(that.check);
+                }
+
                 _Carousel.prototype.auto = function() {
                     var that = this;
+                    this.stop();
                     this.check = setInterval(function() {
                         that.next(1);
                     }, 3500);
