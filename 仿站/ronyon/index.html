@@ -5,13 +5,10 @@
         <title>首页 广州融远科技 微信开发 APP开发 电商系统开发 网站开发 OpenCart开发 OpenCart插件 OpenCart模版 </title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
-        <link rel="stylesheet" href="css/responsive-nav.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="dist/css/merge.css">
         <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/responsive-nav.min.js"></script>
-        <script src="js/bootstrap.js"></script>
+        <script src="js/swiper-3.4.2.jquery.min.js"></script>
     </head>
     <body>
         <div class="nav-box">
@@ -369,27 +366,7 @@
                 <p class="text-center">Copyright © 2013-2020 广州融远信息科技有限公司 All rights reserved 粤ICP备14064850号</p>
             </div>
         </div>
-        <script src="js/swiper-3.4.2.jquery.min.js"></script>
-        <script>
-            var mySwiper = new Swiper('.swiper-container', {
-                    pagination : '.swiper-pagination',
-                    paginationClickable :true,
-                    loop : true,
-                    autoplay: 5000,//可选选项，自动滑动
-            })
-            var navigation = responsiveNav("#nav", { // Selector: The ID of the wrapper
-                animate: true, // Boolean: 是否启动CSS过渡效果（transitions）， true 或 false
-                transition: 400, // Integer: 过渡效果的执行速度，以毫秒（millisecond）为单位
-                label: "Menu", // String: Label for the navigation toggle
-                insert: "before", // String: Insert the toggle before or after the navigation
-                customToggle: "", // Selector: Specify the ID of a custom toggle
-                openPos: "relative", // String: Position of the opened nav, relative or static
-                jsClass: "js", // String: 'JS enabled' class which is added to <html> el
-                debug: false, // Boolean: Log debug messages to console, true 或 false
-                init: function(){}, // Function: Init callback
-                open: function(){}, // Function: Open callback
-                close: function(){} // Function: Close callback
-            });
-        </script>
+        <script src="js/nav.js"></script>
+        <script src="js/carousel.js"></script>
     </body>
 </html>
