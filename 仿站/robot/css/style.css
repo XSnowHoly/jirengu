@@ -2,7 +2,7 @@ body {
     position: relative;
     padding-top: 98px;
     padding-bottom: 725px;
-    background: #fff;
+    background: #fff; !important;
 }
 
 @media (max-width: 766px) {
