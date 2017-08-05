@@ -1,5 +1,7 @@
 body {
+    position: relative;
     padding-top: 98px;
+    padding-bottom: 725px;
 }
 
 @media (max-width: 766px) {
@@ -71,8 +73,11 @@ img {
     background: #fff;
 }
 
+
 .nav-menu > li > a {
     color: #373737;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .nav-menu > li > a:hover {
@@ -131,17 +136,17 @@ img {
 }
 
 .b-img-1 {
-    background: url(../images/background.jpg) center  no-repeat;
+    background: url(../images/banner_1.png) center  no-repeat;
     background-size: cover;    
 }
 
 .b-img-2 {
-    background-image: url(../images/bg.jpg);
+    background-image: url(../images/banner_1.png);
     background-size: cover;
 }
 
 .b-img-3 {
-    background-image: url(../images/p3.jpg);
+    background-image: url(../images/banner_1.png);
     background-size: cover;
 }
 
@@ -223,8 +228,43 @@ img {
 }
 
 .col-rg {
+    position: relative;
     float: left;
     width: 54.16%
+}
+
+.general-content {
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: left;
+    overflow: hidden;
+}
+
+.general-content > h3 {
+    margin-top: 15%;
+    margin-left: 10%;
+}
+
+.general-content > p {
+    font-size: 18px;
+    text-indent: 2em;
+    line-height: 2em;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.general-content > a {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    margin-top: 5%;
+    margin-left: 10%;
+    border: 1px solid #fff;
 }
 
 @media (max-width: 766px) {
@@ -241,7 +281,8 @@ img {
 
 /*主要研究方向*/
 .main-box {
-    background: #115198;
+    background: url(../images/background1.png) center no-repeat;
+    background-size: cover;
     padding-top: 92px;
     padding-bottom: 127px;
 }
@@ -300,7 +341,7 @@ img {
 /*新闻中心*/
 .news-box {
     padding: 66px 0;
-    background: #252525;
+    background: url(../images/news_bg.png) center center no-repeat;
 }
 
 .news-content {
@@ -387,11 +428,162 @@ img {
     font-weight: liner;
 }
 
+/*友情链接区域*/
+.friend-link {
+    background: url(../images/wblack-2.png) center no-repeat;
+    background-size: cover;
+    padding-bottom: 50px;
+}
+
+.friend-link img {
+    width: 100%;
+}
+
+.friend-link > .link-box {
+    margin-top: 50px;
+}
+
+.link-box > .title-box {
+    margin-bottom: 50px;
+}
+
+.link-box .btn {
+    margin-top: 50px;
+}
+
+.friend-link > .link-box > .row {
+    margin-top: 0;
+}
+
+.friend-link > .link-box > .row  div {
+    padding: 0;
+}
+
+/*地图区域*/
+.map {
+    position: relative;
+    height: 940px;
+    background: url(../images/ditu.png) center no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 760px) {
+    .map {
+        height: 400px;
+        background-position: -600px center;
+        background-size: 1200px;
+    }
+}
+
+.map-box {
+    position: relative;
+    height: 100%;
+}
+
+
+.map-info {
+    position: absolute;
+    z-index: 6;
+    top: 98px;
+    left: 125px;
+    width: 440px;
+    height: 625px;
+    border-top: 4px solid #428CDE;
+    box-shadow: 2px 3px 4px #ccc;
+    background: #fff;
+}
+
+.map-info-header {
+    padding: 50px 50px 20px; 
+    color: #000;
+    width: 100%;
+    font-size: 36px;
+    background: #F3F3F3;
+}
+
+.map-info-header h3 {
+    font-size: inherit;
+    margin: 0;
+}
+
+.map-info span {
+    font-size: 20px;
+    color: #999;
+    display: block;
+    margin-top: 30px;
+    margin-left: 38px;
+    margin-right: 38px;
+}
+
+.map-info i {
+    margin-right: 20px;
+}
+
+.icon {
+    display: inline-block;
+    width: 30px;
+    height: 34px;
+    background: url(../images/icon.png) no-repeat;
+}
+
+.icon-name {
+    background-position: 0 5px;
+}
+
+.icon-phone {
+    background-position: 0 -63px;
+}
+
+.icon-email {
+    background-position: 0 -135px;
+}
+
+.icon-address {
+    background-position: 0 -205px;
+}
+
+.icon-postcode {
+    background-position: 0 -310px;
+}
+
+@media (max-width: 768px) {
+    .map-box {
+        display: none;
+    }
+}
+
+.btn-top {
+    display: block;
+    position: absolute;
+    width: 74px;
+    height: 71px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -40px;
+}
 
 /*尾部区域*/
 
 footer {
-    background: #2E3137;
+    background: url(../images/footer_bg.png) top center no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    footer {
+        background: #2C2F34;
+        position: static;
+        width: 100%;
+    }
+    body {
+        padding-bottom: 0;
+    }
+    .btn-top {
+        display: none;
+    }
 }
 
 
@@ -409,14 +601,15 @@ footer {
 }
 
 .list-box {
-    display: flex;
+    /*display: flex;*/
     margin-top: 128px;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    /*flex-wrap: wrap;
+    justify-content: space-between;*/
 }
 
 .footer-list {
     display: flex;
+    float: left;
     flex-wrap: wrap;
 }
 
@@ -428,13 +621,14 @@ footer {
 
 .footer-list > ul a {
     display: block;
-    padding: 10px;
+    padding: 10px 50px;
     padding-left: 0;
     color: #999997;
 }
 
 
 .quick-box {
+    float: right;
     color: #fff;
 }
 
@@ -451,6 +645,9 @@ footer {
     }
     .footer-list ul {
         min-width: 10%;
+    }
+    .quick-box {
+        float: none;
     }
 }
 
