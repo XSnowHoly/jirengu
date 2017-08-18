@@ -1,0 +1,175 @@
+body {
+    position: relative;
+    padding-top: 98px;
+    padding-bottom: 725px;
+    background: #fff; !important;
+}
+
+
+@media (max-width: 766px) {
+    body {
+        padding-top: 50px;
+    }
+}
+
+nav {
+    /*min-height: 98px;*/
+    box-shadow: 2px 2px 2px #ccc;
+    background: #fff;
+}
+
+a { 
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+
+img {
+    border: 0;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+} 
+
+.research-box {
+
+}
+
+.header-nav {
+    width: 100%;
+    padding: 0 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.header-nav > ul,
+.header-nav > ul li {
+    display: inline-block;
+}
+
+.bread-nav {
+    float: left;
+}
+
+.bread-nav > li {
+    color: #999;
+}
+
+.bread-nav > li > a {
+    display: inline-block;
+    padding: 12px 5px;
+}
+
+.header-menu {
+    float: right;
+}
+
+.header-menu > li > a {
+    display: inline-block;
+    color: #666;
+    padding: 12px 26px;
+}
+
+.header-menu .active > a {
+    color: #fff;
+    background: #428CDE;
+}
+
+.research-content {
+    width: 100%;
+    padding: 45px 50px;
+    /*float: left;*/
+}
+
+/*.research-content ul,*/
+.research-content li,
+.research-content a {
+    display: inline-block;
+}
+
+.reaserch-sidebar {
+    width: 190px;
+    padding-top: 25px;
+    background: #F0F0F0;
+    float: left;
+}
+
+.reaserch-sidebar > li {
+    width: 100%;
+    text-align: center;
+}
+
+.reaserch-sidebar > li > a {
+    font-size: 16px;
+    width: 100%;
+    padding: 18px 0;
+    border-top: 1px solid #E1DDDE;
+    background: linear-gradient(to right, #fbfbfb, #efefef);
+}
+
+.reaserch-sidebar > .home > a {
+    color: #fff;
+    background: #428CDE;
+}
+
+.reaserch-sidebar > .home > a > h4 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.reaserch-sidebar > .home > a > span {
+    font-size: 12px;
+}
+
+.reaserch-sidebar > .active > a {
+    color: #418CDF;
+}
+
+.reaserch-main {
+    margin-left: 238px;
+}
+
+.reaserch-main p {
+    font-size: 18px;
+    font-weight: lighter;
+    color: #666;
+    margin-top: 60px;
+    text-indent: 2em;
+    line-height: 2em;
+}
+
+.main-banner img {
+    width: 100%;
+    height: auto;
+}
+
+
+@media (max-width: 766px) {
+    .header-nav {
+        padding: 0;
+    }
+    .bread-nav > li > a {
+        padding: 12px 5px;
+    }
+    .reaserch-sidebar {
+        display: none;
+    }
+    .reaserch-main {
+        margin-left: 0;
+    }
+    .research-content {
+        padding: 45px 20px;
+    }
+}
