@@ -51,11 +51,13 @@ var $ = require('jquery');
                         });
 
                         this.$BtnPrev.on('click', function() {
+                            e.preventDefault();
                             that.prev(1);
                             that.gotoBtn();
                         });
 
                         this.$BtnNext.on('click', function() {
+                            e.preventDefault();
                             that.next(1);
                             that.gotoBtn();
                         });
