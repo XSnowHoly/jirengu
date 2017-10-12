@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>省医APP演示</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <meta name="description" content="今夜，给自己加戏">
+    <link rel="stylesheet" type="text/css" href="css/base.css" media="all">
+    <link rel="shortcut icon" type="image/x-icon" href="http://shared.youdao.com/market/xijing/img/share.jpg">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b05e949a0ad8e3abe4bef25835dd72f0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <script src="js/zepto.min.js"></script>
+    <script>
+    </script>
+</head>
+
+<body><img src="img/share.jpg" style="display:none;width:1px;height:1px;" />
+    <div class="all">
+        <div class="all" id="loading"></div>
+        <div id="play" style="display:none"></div>
+    </div>
+    <video id="video" webkit-playsinline="true" playsinline="true" style="width: 1px; height: 1px" type="video/mp4" preload x5-video-player-type="h5"></video>
+    <div id="content">
+        <input type="button" id="replay" class="btn" value="点我重新播放">
+    </div>
+</body>
+<script src="js/main.js"></script>
+
+</html>
