@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div  v-show="check" v-bind:title="title">
+            {{ message }}
+        </div>
+        <button v-on:click="jump">提交</button>
+        <input v-model="message"  type="text">
+        <ul>
+	<li v-for="arr in arr">
+	{{ arr.id }}
+	</li>
+        </ul>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
