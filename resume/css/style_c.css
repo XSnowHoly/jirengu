@@ -21,7 +21,8 @@ strong {
 
 .layout {
     width: 1200px;
-    margin: 50px auto 100px;
+    position: relative;
+    margin: 30px auto 100px;
     background: #FDFDFE;
     box-shadow: 2px 3px 5px #ccc;
 }
@@ -33,7 +34,10 @@ strong {
 }
 
 .aside {
-    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 350px;
     float: left;
     margin-left: 50px;
@@ -41,10 +45,18 @@ strong {
     text-align: center;
 }
 
-.aside img {
-	width: 60%;
+.aside .avatar-box {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
 	border: 2px solid #fff;
-	border-radius: 60%;
+    border-radius: 50%;
+    text-align: center;
+    background: #fff;
+}
+.aside .avatar-box img {
+    width: 80%;
 }
 
 .aside .content {
@@ -126,7 +138,8 @@ strong {
 .main h3 {
 	display: inline-block;
 	width: 100%;
-	padding: 10px 0 10px;
+    padding: 10px 0 10px;
+    margin-bottom: 10px;
     margin-top: 5px;
 	text-indent: 50px;
 	border-bottom: 2px solid #575757;
@@ -171,7 +184,14 @@ strong {
     font-size: 1.3em;
 }
 
+.main .work {
+    padding: 0;
+}
 
+.main .work li p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
 
 .adorn {
 	height: 90px;
@@ -182,7 +202,7 @@ strong {
 	content: '';
 	position: absolute;
 	left: -20px;
-	top: 16px;
+	top: 17px;
 	display: block;
 	width: 60px;
     height: 56px;
@@ -196,7 +216,7 @@ strong {
 	content: '';
 	position: absolute;
 	right: -20px;
-	top: 16px;
+	top: 17px;
 	display: block;
 	width: 60px;
     height: 56px;
