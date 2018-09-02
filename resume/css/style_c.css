@@ -87,6 +87,18 @@ strong {
 }
 
 
+.aside .content .jianshu-box {
+    display: inline-block;
+    width: 65%;
+}
+
+.aside .content .jianshu-box .jianshu-code {
+    /* display: inline-block; */
+    display: block;
+    width: 100px;
+}
+
+
 .aside .content .contact span {
 	display: block;
 	text-align: left;
