@@ -54,6 +54,7 @@ strong {
     border-radius: 50%;
     text-align: center;
     background: #fff;
+    box-shadow: #ccc 1px 1px 10px 2px;
 }
 .aside .avatar-box img {
     width: 80%;
@@ -67,7 +68,7 @@ strong {
 	display: inline-block;
 	width: 100%;
 	padding: 11px 0;
-	background: #A4C2DE;
+	background: #29B6F6;
 	color: #fff;
 	box-shadow: 2px 3px 5px #ccc;
 
@@ -107,6 +108,15 @@ strong {
 	width: 40%;
 	margin: 15px;
 	font-size: 1.2em;
+}
+
+.aside .content .mini-resume {
+    margin-top: 50px;
+}
+
+.aside .content .mini-resume img {
+    width: 150px;
+    box-shadow: #ccc 1px 1px 10px 2px;
 }
 
 .course {
@@ -150,14 +160,13 @@ strong {
 .main span,
 .main h4 {
     display: inline-block;
-    width: 40%;
     margin-left: 20px;
     margin-top: 10px;
     margin-bottom: 5px;
     font-size: 18px;
     letter-spacing: 0.1em;
     vertical-align: top;
-    color: #9DBADD;
+    color: #29B6F6;
 }
 
 .main span {
@@ -188,9 +197,13 @@ strong {
     padding: 0;
 }
 
-.main .work li p {
+.main .work  p {
     font-size: 16px;
     margin-bottom: 10px;
+}
+
+.main .work-content {
+    margin-top: 10px;
 }
 
 .adorn {
@@ -206,7 +219,7 @@ strong {
 	display: block;
 	width: 60px;
     height: 56px;
-    background: #A4C2DE;
+    background: #29B6F6;
     -webkit-transform: skew(30deg);
     -moz-transform: skew(30deg);
     -o-transform: skew(30deg);
@@ -220,7 +233,7 @@ strong {
 	display: block;
 	width: 60px;
     height: 56px;
-    background: #A4C2DE;
+    background: #29B6F6;
     -webkit-transform: skew(30deg);
     -moz-transform: skew(30deg);
     -o-transform: skew(30deg);
