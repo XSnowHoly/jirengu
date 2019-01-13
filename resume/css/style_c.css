@@ -138,7 +138,8 @@ strong {
 .main {
 	width: 60%;
 	float: right;
-	margin-right: 30px;
+    margin-right: 30px;
+    padding-bottom: 20px;
 }
 
 /*二维码盒子*/
