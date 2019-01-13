@@ -68,7 +68,8 @@ strong {
 	display: inline-block;
 	width: 100%;
 	padding: 11px 0;
-	background: #29B6F6;
+    background: #29B6F6;
+    border-radius: 4px;
 	color: #fff;
 	box-shadow: 2px 3px 5px #ccc;
 
@@ -224,7 +225,7 @@ strong {
 	position: relative;
 }
 
-.adorn:before {
+/* .adorn:before {
 	content: '';
 	position: absolute;
 	left: -20px;
@@ -251,7 +252,7 @@ strong {
     -moz-transform: skew(30deg);
     -o-transform: skew(30deg);
     transform: skew(30deg);
-}
+} */
 
 .skill p {
     margin-bottom: 10px;
