@@ -18,7 +18,7 @@
 					<img src="./images/logo.png">
 				</div>
 				<h2>赖文斌</h2>
-				<p>应聘岗位：web前端工程师</p>
+				<p>web前端工程师</p>
 			</div>
 			<div class="content">
 				<div class="information">
@@ -55,9 +55,18 @@
 					<div class="adorn">
 						<h2 class="iconfontyyy icon-contact">联系方式</h2>
 					</div>
-					<span class="iconfontyyy icon-phone">13250281210</span>
-					<span class="iconfontyyy icon-youxiang">495904127@qq.com</span>
-					<span class="iconfontyyy icon-weixin-copy">SkyBin666</span>
+					<div class="contact-item">
+						<i class="iconfontyyy icon-phone"></i>
+						<span>13250281210</span>
+					</div>
+					<div class="contact-item">
+						<i class="iconfontyyy icon-youxiang"></i>
+						<span>wblai@foxmail.com</span>
+					</div>
+					<div class="contact-item">
+						<i class="iconfontyyy icon-weixin-copy"></i>
+						<span>SkyBin666</span>
+					</div>
 				</div>
 				<div class="hobby clearfix">
 					<div class="adorn">
@@ -70,23 +79,11 @@
 			</div>
 		</div>
 		<div class="main">
-			<div class="self-assessment">
+			<!-- <div class="self-assessment">
 				<h3 class="iconfontyyy icon-evaluate">自我评价</h3>
 				<span>乐观开朗，积极向上。学习能力强，喜欢挑战，喜欢接受新事物，具有责任心，和团队 意识，具有良好的沟通能力。热爱前端。
 				</span>
-			</div>
-			<div class="work">
-				<h3 class="iconfontyyy icon-gongzuo">工作经验</h3>
-				<div>
-					<h4>北大医信-广州健迅科技有限公司(2017-08~至今)</h4>
-					<div class="work-content">
-						<p>1.主要负责广东省人民医院新版本微信公众号web项目的前端开发</p>
-						<p>2.负责广东省人民医院的旧版本微信公众号web项目的前端部分维护与解决bug</p>
-						<p>3.公司的医院综合服务平台统计功能模块开发（使用ECharts开发可视化统计功能）</p>
-						<p>4.负责中山眼科中心的微信公众号web项目前端开发</p>
-					</div>
-				</div>
-			</div>
+			</div> -->
 			<div class="skill">
 				<h3 class="iconfontyyy icon-jineng">职业技能</h3>
 				<h4>HTML&CSS</h4>
@@ -97,37 +94,54 @@
 					<strong>盒模型、浮动，定位，BFC</strong> 等概念。熟悉
 					<strong>响应式</strong>和
 					<strong>flex</strong> 布局</span>
-				<h4>JavaScript&jQuery</h4>
-				<span>熟悉原生 JS 和 jQuery,利用 JS 和 jQery 实现常见效果，能够不依赖库手写 tab 切换、轮播、 瀑布流布局、懒加载 等效果。掌握
-					<strong>事件模型、DOM 操作、ajax、jsonp、闭包、 原型链、面向对象、封装
-					</strong>等知识</span>
+				<h4>ECMAScript（JavaScript）</h4>
+				<span>熟悉 JavaScript ，<strong>代码编写遵守规范</strong></span>
+				<span>了解 <strong>JavaScript 面向对象知识</strong>与 <strong>MV* 模式</strong></span>
+				<span>熟练使用<strong> ES6/7 </strong>开发项目</span>
+				<span>熟悉异步编程，<strong>掌握常见的解决方案及原理</strong></span>
 				<h4>框架&工具</h4>
-				<span>熟悉
-					<strong>Vue</strong>开发，使用
-					<strong>Vue全家桶</strong> 开发过移动端微信公众号项目，熟练使用
-					<strong>Vux</strong>组件库构建前端UI界面， 以及使用
+				<span>熟练使用
+					<strong>Vue (Vue2 + vue-router + Vuex)</strong>全家桶相关技术，
+					使用<strong>Vux</strong>构建移动端前端UI界面，
+					使用<strong>Element</strong>构建PC端前端UI界面, 以及使用
 					<strong>Axios</strong> HTTP库处理与后台的数据交互。</span>
 				<span>了解<strong>小程序开发</strong>，开发过个人简历小程序（已上线）</span>
 				<span>熟练使用
-					<strong>sublime、Git、Node.js</strong> 命令行等开发工具。</span>
+					<strong>VS Code、Sublime、Git、Node.js</strong> 命令行等开发工具。</span>
 				<span>熟悉
 					<strong>requirejs、gulp 、webpack </strong>等前端构建工具，打包代码和实现代码的模块化。</span>
-				<span>熟悉
-					<strong>BootStrap</strong> 的基本用法。</span>
+				<span>熟悉 <strong>jQuery/Bootstrap</strong> 等常见框架类库的使用</span>
 				<span>了解掌握
 					<strong>Chrome开发者工具</strong>和
 					<strong>Firebug</strong>，可快速寻找bug。</span>
 			</div>
+			<div class="work">
+				<h3 class="iconfontyyy icon-gongzuo">工作经验</h3>
+				<div>
+					<h4>北大医信-广州健迅科技有限公司(2017-08~至今)</h4>
+					<div class="work-content">
+						<p>负责公司对外产品前端开发工作（移动端、PC）</p>
+						<p>1.主要负责广东省人民医院新版本微信公众号web项目的前端开发;</p>
+						<p>2.公司的医院综合服务平台统计功能模块开发（使用ECharts开发可视化统计功能）;</p>
+						<p>3.负责中山眼科中心的微信公众号web项目前端开发;</p>
+						<p>4.及时响应甲方提出的问题并快速处理线上产品出现的 bug;</p>
+						<p>5.了解实用技术用以提升产品的交互效果，使用户操作更加人性化;</p>
+						<p>6.通过开发多款同类webApp分析项目中可复用的地方，编写出一套通用模板提升团队项目开发速度15%;</p>
+					</div>
+				</div>
+			</div>
 			<div class="demo">
-				<h3 class="iconfontyyy icon-xiangmu">项目作品</h3>
+				<h3 class="iconfontyyy icon-xiangmu">项目经历</h3>
 				<h4>中山大学中山眼科中心微信公众号（已上线）</h4>
 				<span>使用技术: Vue2 + axios + Vux + Less</span>
-				<span>本项目是一个医院在线预约挂号缴费的微信公众号webApp， 使用vue+webpack构建的单页面应用，项目采用vuex、vue-route、axios以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。</span>
-				<h4>广东省人民医院微信公众号</h4>
-				<span>使用技术: Vue2 + axios + Vux + Less</span>
-				<span>该项目是基于微信公众号的移动端Web应用， 使用 Vue2 + axios + Vux + Less 搭建的 前后端分离 + RESTful API + SPA 的医院综合服务系统。 项目前端UI框架使用Vux， 实现组件按需加载，使用vue-router
+				<span>本项目是一个医院在线预约挂号缴费的微信公众号webApp，
+					使用vue+webpack构建的单页面应用，项目采用vuex、vue-route、axios以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。</span>
+				<h4>广东省人民医院微信公众号（已上线）</h4>
+				<span>使用技术: Vue2 + axios + Vuex + Vux + Less</span>
+				<span>该项目是基于微信公众号的移动端Web应用， 使用 Vue2 + axios + Vux + Less 搭建的 前后端分离 + RESTful API + SPA 的医院综合服务系统。 项目前端UI框架使用Vux，
+					实现组件按需加载，使用vue-router
 					修改动态路由，路由组件按需加载，加快首屏加载速度。 通过封装axios做数据请求统一处理，与后端进行数据交互， 实现了大量的前后端分离，以及复杂的业务逻辑。</span>
-				<h4>一个互联网企业站</h4>
+				<!-- <h4>一个互联网企业站</h4>
 				<span>使用技术：HTML5、CSS3、jQuery、BootStrap</span>
 				<span>地址:
 					<a href="https://xsnowholy.github.io/jirengu/仿站/ronyon/" target="_blank">https://xsnowholy.github.io/jirengu/仿站/ronyon/</a>
@@ -140,7 +154,7 @@
 				<h4>一个漫画作品介绍网站</h4>
 				<span>使用技术：HTML5、CSS3、jQuery、requireJs、媒体查询</span>
 				<span>地址:
-					<a href="https://xsnowholy.github.io/jirengu/jojo/" target="_blank">https://xsnowholy.github.io/jirengu/jojo/</a>
+					<a href="https://xsnowholy.github.io/jirengu/jojo/" target="_blank">https://xsnowholy.github.io/jirengu/jojo/</a> -->
 				</span>
 				<!-- <h4>一些jQuery效果实例</h4>
 				<span>使用技术：HTML5、CSS3动画效果、jQuery 、媒体查询</span>
