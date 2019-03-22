@@ -148,13 +148,18 @@ strong {
 }
 
 .main .demo-item .qrcode-box {
-    display: flex;
     position: absolute;
     top: 0;
     right: 0;
 }
 
+.main .demo-item .qrcode-box span {
+    display: inline-block;
+    width: auto;
+}
+
 .main .demo-item .qrcode-box img {
+    display: inline-block;
     width: 80px;
     height: 80px;
 }
