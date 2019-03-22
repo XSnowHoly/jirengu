@@ -147,6 +147,10 @@ strong {
     position: relative;
 }
 
+.main .demo-item .demo-detail {
+    margin-top: 8px;
+}
+
 .main .demo-item .qrcode-box {
     position: absolute;
     top: 0;
